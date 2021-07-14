@@ -1,0 +1,3 @@
+graft mqtt_remote/local_callbacks
+include mqtt_remote/class_template.txt
+include mqtt_remote/config.yaml

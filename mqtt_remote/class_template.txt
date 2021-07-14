@@ -1,0 +1,52 @@
+from mqtt_remote.message import CommandMessageCallback
+
+
+
+class ClassName(CommandMessageCallback):
+    """Class docstring
+    """
+    def __init__(self):
+        """Constructor
+        """
+        # self.disabled = True # optional
+        self._message_name = 'message' # required
+        # self.config = None # optional
+        # self.mqtt_publish = None # optional
+
+    @property
+    def message_name(self):
+        """Getter
+
+        Returns:
+            str: The message name
+        """
+        return self._message_name
+
+    def execute(self, inbound_message):
+        """The code to be executed when a matching MQTT message is received
+
+        Execution occurs when a CommandMessage containing a 'payload['command']' value that
+        matches with self._message_name is received by CommandMessageCallbackCaller
+
+        Args:
+            inbound_message (CommandMessage): The CommandMessage with a 'payload['command']'
+                value that matches with self._message_name
+        """
+        pass
+
+
+# Changes to make to the above to make it into usable code:
+#     Required:
+#         - Line 5: Replace 'ClassName' with an appropriate class name
+#         - Line 12: Replace 'message' after 'self._message_name =' with an appropriate message
+#                    name
+#         - Line 35: Replace 'pass' in the execute method with the code to execute if an MQTT
+#                    message json 'payload['command']' value matches self._message_name
+#     Optional:
+#         - Lines 6-7: Update the class docstring
+#         - Line 11: uncomment this line if you want to disable this callback (useful for
+#                    debugging)
+#         - Line 13: uncomment this line if you want to have access to the app configuration
+#                    from this class (via self.config)
+#         - Line 14: uncomment this line if you want to have access to the MQTT message publisher
+#                    via self.mqtt_publish (required if you want to send an MQTT message)

@@ -1,0 +1,1691 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>README &mdash; MQTT Remote  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="modules.html" />
+    <link rel="prev" title="Welcome to MQTT Remote’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MQTT Remote
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">README</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-it">1.0 - What is it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ok-why-should-i-be-interested">2.0 - Ok, why should I be interested?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#i-still-don-t-quite-get-it-please-give-me-an-example">3.0 - I still don’t quite get it, please give me an example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-other-things-could-mqtt-remote-do-when-it-receives-an-mqtt-message">4.0 - What other things could MQTT Remote do when it receives an MQTT message?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-it-work">5.0 - How does it work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#are-there-any-callbacks-built-in-to-the-app">6.0 - Are there any callbacks built in to the app?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-quick-note-on-placeholders">7.0 - A quick note on placeholders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-standardised-mqtt-message-payloads-and-what-do-they-look-like">8.0 - Why ‘standardised’ MQTT message payloads and what do they look like?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-the-main-features-of-the-app">9.0 - What are the main features of the app?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-do-i-need-to-install-and-run-it">10.0 - What do I need to install and run it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-install-it">11.0 - How do I install it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-use-mqtt-remote">12.0 - How do I use MQTT Remote?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-change-directory-to-the-package-directory">12.2 - How do I change directory to the package directory?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-configure-mqtt-remote">12.3 - How do I configure MQTT Remote?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-start-mqtt-remote">12.4 - How do I start MQTT Remote?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-stop-mqtt-remote">12.5 - How do I stop MQTT Remote?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restarting-mqtt-remote">12.6 - Restarting MQTT Remote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-callbacks">12.7 - Local callbacks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-a-local-callback">12.7.1 - What is a local callback?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-do-i-add-a-local-callback">12.7.3 - How do I add a local callback?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-do-i-use-an-existing-local-callback">12.7.4 - How do I use an existing local callback?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-make-a-callback-do-what-i-want">12.8 - How do I make a callback do what I want?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#imports">12.8.1 - Imports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#callback-class">12.8.2 - Callback class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#init-method">12.8.2.1 - __init__ method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-method">12.8.2.2 - execute method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">13 - Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1-adding-a-local-callback-to-sum-two-positive-integers">13.1 - Example 1 - Adding a local callback to sum two positive integers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#problem">13.1.1 - Problem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#outline-solution">13.1.2 - Outline solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#designing-the-payload-message">13.1.3 - Designing the payload message</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-local-callback-file-from-the-template">13.1.4 - Creating a local callback file from the template</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-the-new-local-callback-file">13.1.5 - Editing the new local callback file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-new-callback">13.1.6 - Running the new callback</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2-adding-an-existing-callback-to-the-app">13.2 - Example 2 - Adding an existing callback to the app</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">13.2.1 - Problem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solution">13.2.2 - Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#project-status">14 - Project status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-do">15 - To do</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MQTT Remote</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>README</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/readme_link.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#what-is-it">1.0 - What is it?</a></p></li>
+<li><p><a class="reference internal" href="#ok-why-should-i-be-interested">2.0 - Ok, why should I be interested?</a></p></li>
+<li><p><a class="reference internal" href="#i-still-don-t-quite-get-it-please-give-me-an-example">3.0 - I still don’t quite get it, please give me an example</a></p></li>
+<li><p><a class="reference internal" href="#what-other-things-could-mqtt-remote-do-when-it-receives-an-mqtt-message">4.0 - What other things could MQTT Remote do when it receives an MQTT message?</a></p></li>
+<li><p><a class="reference internal" href="#how-does-it-work">5.0 - How does it work?</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-callbacks-built-in-to-the-app">6.0 - Are there any callbacks built in to the app?</a></p></li>
+<li><p><a class="reference internal" href="#a-quick-note-on-placeholders">7.0 - A quick note on placeholders</a></p></li>
+<li><p><a class="reference internal" href="#why-standardised-mqtt-message-payloads-and-what-do-they-look-like">8.0 - Why ‘standardised’ MQTT message payloads and what do they look like?</a></p></li>
+<li><p><a class="reference internal" href="#what-are-the-main-features-of-the-app">9.0 - What are the main features of the app?</a></p></li>
+<li><p><a class="reference internal" href="#what-do-i-need-to-install-and-run-it">10.0 - What do I need to install and run it?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-install-it">11.0 - How do I install it?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-use-mqtt-remote">12.0 - How do I use MQTT Remote?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-change-directory-to-the-package-directory">12.2 - How do I change directory to the package directory?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-configure-mqtt-remote">12.3 - How do I configure MQTT Remote?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-start-mqtt-remote">12.4 - How do I start MQTT Remote?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-stop-mqtt-remote">12.5 - How do I stop MQTT Remote?</a></p></li>
+<li><p><a class="reference internal" href="#restarting-mqtt-remote">12.6 - Restarting MQTT Remote</a></p></li>
+<li><p><a class="reference internal" href="#local-callbacks">12.7 - Local callbacks</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-a-local-callback">12.7.1 - What is a local callback?</a></p></li>
+<li><p><a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-add-a-local-callback">12.7.3 - How do I add a local callback?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-use-an-existing-local-callback">12.7.4 - How do I use an existing local callback?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-do-i-make-a-callback-do-what-i-want">12.8 - How do I make a callback do what I want?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#imports">12.8.1 - Imports</a></p></li>
+<li><p><a class="reference internal" href="#callback-class">12.8.2 - Callback class</a></p>
+<ul>
+<li><p><a class="reference internal" href="#init-method">12.8.2.1 - __init__ method</a></p></li>
+<li><p><a class="reference internal" href="#execute-method">12.8.2.2 - execute method</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#examples">13 - Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example-1-adding-a-local-callback-to-sum-two-positive-integers">13.1 - Example 1 - Adding a local callback to sum two positive integers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#problem">13.1.1 - Problem</a></p></li>
+<li><p><a class="reference internal" href="#outline-solution">13.1.2 - Outline solution</a></p></li>
+<li><p><a class="reference internal" href="#designing-the-payload-message">13.1.3 - Designing the payload message</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-local-callback-file-from-the-template">13.1.4 - Creating a local callback file from the template</a></p></li>
+<li><p><a class="reference internal" href="#editing-the-new-local-callback-file">13.1.5 - Editing the new local callback file</a></p></li>
+<li><p><a class="reference internal" href="#running-the-new-callback">13.1.6 - Running the new callback</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example-2-adding-an-existing-callback-to-the-app">13.2 - Example 2 - Adding an existing callback to the app</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1">13.2.1 - Problem</a></p></li>
+<li><p><a class="reference internal" href="#solution">13.2.2 - Solution</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#project-status">14 - Project status</a></p></li>
+<li><p><a class="reference internal" href="#to-do">15 - To do</a></p></li>
+</ul>
+</div>
+<div class="section" id="what-is-it">
+<h2>1.0 - What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h2>
+<p>It’s an app that allows you to easily run python code on a remote computer by
+sending MQTT messages.</p>
+</div>
+<div class="section" id="ok-why-should-i-be-interested">
+<h2>2.0 - Ok, why should I be interested?<a class="headerlink" href="#ok-why-should-i-be-interested" title="Permalink to this headline">¶</a></h2>
+<p>Because computers are not created or set up equally. They have differing
+resources, e.g.:</p>
+<ul class="simple">
+<li><p>Some are tiny microcontrollers that have just about enough resources to
+do something like blink an LED or send an MQTT message.</p></li>
+<li><p>Some are high end servers with crazy amounts of computing power but don’t
+have things like monitors or sound playing hardware.</p></li>
+<li><p>Some are gaming PCs with premium graphic and sound capabilities.</p></li>
+<li><p>Only certain apps can be installed on certain computers.</p></li>
+<li><p>Every computer is installed in a different physical location.</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>and because of this you may have a situation where you want computer ‘A’ to
+perform a task but it can’t because it doesn’t have the required resources.</p>
+<p>If, though, you have computer ‘B’ with the required resources and it can
+receive an MQTT message from computer ‘A’ then MQTT Remote could provide you
+with an easy way of getting computer ‘A’ to get computer ‘B’ to perform the
+required task.</p>
+</div>
+<div class="section" id="i-still-don-t-quite-get-it-please-give-me-an-example">
+<h2>3.0 - I still don’t quite get it, please give me an example<a class="headerlink" href="#i-still-don-t-quite-get-it-please-give-me-an-example" title="Permalink to this headline">¶</a></h2>
+<p>No problem, let’s say:</p>
+<ul class="simple">
+<li><p>You want to make a DIY doorbell system by connecting a push button to a
+microcontroller.</p></li>
+<li><p>When the push button is pressed you want a ‘ding-dong’ sound to be produced.</p></li>
+<li><p>The microcontroller has no built in means of making sounds but it can send
+MQTT messages.</p></li>
+<li><p>Your network has an MQTT broker running on it.</p></li>
+<li><p>You have another computer, a Raspberry Pi, on your network that can play
+sound through attached speakers.</p></li>
+</ul>
+<p>In this situation you could create a solution by:</p>
+<ul class="simple">
+<li><p>installing MQTT Remote on the Raspberry Pi.</p></li>
+<li><p>programming MQTT Remote so that when it receives a specific MQTT message it
+plays a ‘ding-dong’ sound through the Raspberry Pi’s speakers.</p></li>
+<li><p>programming the microcontroller to publish the specific MQTT message when the
+push button is pressed.</p></li>
+</ul>
+<p>Then when the push button is pressed:</p>
+<ul>
+<li><p>the microcontroller publishes the specific MQTT message.</p></li>
+<li><p>the MQTT broker receives and then forwards the MQTT message onto the
+Raspberry Pi.</p></li>
+<li><p>on the Raspberry Pi the MQTT Remote app receives and processes the MQTT
+message, instructing the Pi to play a ‘ding-dong’ sound via its speakers.</p></li>
+<li><p>the Raspberry Pi plays the ‘ding-dong’ sound.</p>
+<p>(This all happens within a few milliseconds and appears to be instant to the
+user.)</p>
+</li>
+</ul>
+</div>
+<div class="section" id="what-other-things-could-mqtt-remote-do-when-it-receives-an-mqtt-message">
+<h2>4.0 - What other things could MQTT Remote do when it receives an MQTT message?<a class="headerlink" href="#what-other-things-could-mqtt-remote-do-when-it-receives-an-mqtt-message" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Play video.</p></li>
+<li><p>Make use of an internet connection.</p></li>
+<li><p>Perform a task quicker than a computer with a lower spec.</p></li>
+<li><p>Interact with apps installed on the computer.</p></li>
+<li><p>Log data.</p></li>
+<li><p>Switch something on or off.</p></li>
+<li><p>Interact with non-MQTT compatible devices, e.g.:</p>
+<ul>
+<li><p>Routers.</p></li>
+<li><p>Network speakers.</p></li>
+</ul>
+</li>
+</ul>
+<p>These are just some examples. The limits of what MQTT Remote can do in
+response to receiving an MQTT message are only really defined by the limits of
+the resources of the computer it’s running on, i.e. the limits of its hardware
+and software.</p>
+</div>
+<div class="section" id="how-does-it-work">
+<h2>5.0 - How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h2>
+<p>The MQTT Remote app is based around a python implemented MQTT client that:</p>
+<ul class="simple">
+<li><p>allows the user to register multiple MQTT messages that follow a
+standardised payload form.</p></li>
+<li><p>allows the user to associate a callback with each MQTT message they’ve
+registered.</p></li>
+<li><p>listens for registered MQTT messages and if one is detected the
+associated callback is executed.</p></li>
+</ul>
+</div>
+<div class="section" id="are-there-any-callbacks-built-in-to-the-app">
+<h2>6.0 - Are there any callbacks built in to the app?<a class="headerlink" href="#are-there-any-callbacks-built-in-to-the-app" title="Permalink to this headline">¶</a></h2>
+<p>No, the app starts you off with a blank canvas. It’s up to you to create the
+callbacks you need or add existing ones. The app is designed to make both very
+easy, see:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-do-i-add-a-local-callback">12.7.3 - How do I add a local callback?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-use-an-existing-local-callback">12.7.4 - How do I use an existing local callback?</a></p></li>
+</ul>
+<p>It’s hoped that over time a library of callbacks can be built up and stored in
+this repository for the user to pick and choose from as required. The user
+should then be able to add a new capability within seconds.</p>
+</div>
+<div class="section" id="a-quick-note-on-placeholders">
+<h2>7.0 - A quick note on placeholders<a class="headerlink" href="#a-quick-note-on-placeholders" title="Permalink to this headline">¶</a></h2>
+<p>Within this documentation the symbols ‘&lt;’ and ‘&gt;’ are used to indicate
+information that’s specific to the user. Sometimes the user is required to
+replace these symbols and the text between them with their own data, e.g.
+if you were asked to enter the following at the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some_command</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>and your name was ‘Monty’ then you’d enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">some_command</span> <span class="n">Monty</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="why-standardised-mqtt-message-payloads-and-what-do-they-look-like">
+<h2>8.0 - Why ‘standardised’ MQTT message payloads and what do they look like?<a class="headerlink" href="#why-standardised-mqtt-message-payloads-and-what-do-they-look-like" title="Permalink to this headline">¶</a></h2>
+<p>A standardised MQTT message payload form is required to allow MQTT Remote to
+easily recongise and process messages intended for it.</p>
+<p>The standardised payload is simple, flexible and json based. It has the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{“command”: “&lt;command&gt;”, “attributes”: {&lt;attribute key-value pairs&gt;}}
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><strong>&lt;command&gt;</strong>…..Is a unique string identifier for the command (task) you
+want to be executed.</p></li>
+<li><p><strong>&lt;attribute key-value pairs&gt;</strong>…..Is a json object containing all of
+the information necessary to execute the command.</p>
+<ul>
+<li><p>By nesting items a lot of information can be included whilst maintaining
+useful structure and good readability.</p></li>
+</ul>
+</li>
+</ul>
+<p>See ‘<a class="reference internal" href="#designing-the-payload-message">13.1.3 - Designing the payload message</a>’ for an example.</p>
+</div>
+<div class="section" id="what-are-the-main-features-of-the-app">
+<h2>9.0 - What are the main features of the app?<a class="headerlink" href="#what-are-the-main-features-of-the-app" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>It’s easy to use:</p>
+<ul>
+<li><p>A .yaml file is used for configuration, see:</p>
+<ul>
+<li><p><a class="reference internal" href="#how-do-i-configure-mqtt-remote">12.3 - How do I configure MQTT Remote?</a></p></li>
+</ul>
+</li>
+<li><p>Significant logging is built in to make debugging easier.</p></li>
+<li><p>Minimal effort is required to get callbacks into operation:</p>
+<ul>
+<li><p>Local callbacks:</p>
+<ul>
+<li><p>New callbacks - see:
+‘<a class="reference internal" href="#how-do-i-add-a-local-callback">12.7.3 - How do I add a local callback?</a>’.</p></li>
+<li><p>Existing callbacks - see:
+‘<a class="reference internal" href="#how-do-i-use-an-existing-local-callback">12.7.4 - How do I use an existing local callback?</a>’.</p></li>
+</ul>
+</li>
+<li><p>Plugin callbacks:</p>
+<ul>
+<li><p>Full documentation for plugins is not available yet but further
+information can be found in the ‘<a class="reference internal" href="#to-do">15 - To do</a>’ section.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>It’s reliable:</p>
+<ul>
+<li><p>Exception handling keeps the MQTT client running if problems occur
+whilst also keeping the user informed of what’s happening.</p></li>
+<li><p>There’s wide test coverage (pytest).</p></li>
+</ul>
+</li>
+<li><p>It’s multi-platform:</p>
+<ul>
+<li><p>Successful tests to date:</p>
+<ul>
+<li><p>PC: Windows: Windows 10 Pro</p></li>
+<li><p>PC: Linux: Ubuntu 20.04.</p></li>
+<li><p>Raspberry Pi 4: Linux: Raspberry Pi OS: Buster.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="what-do-i-need-to-install-and-run-it">
+<h2>10.0 - What do I need to install and run it?<a class="headerlink" href="#what-do-i-need-to-install-and-run-it" title="Permalink to this headline">¶</a></h2>
+<p>The requirements for the computer MQTT Remote will be installed on are:</p>
+<blockquote>
+<div><ul>
+<li><p>it must be on a network that has an MQTT broker running on it.</p>
+<ul class="simple">
+<li><p>mosquitto (<a class="reference external" href="https://mosquitto.org/">https://mosquitto.org/</a>) is a good choice for an MQTT broker
+if you don’t already have one set up on your network.</p>
+<ul>
+<li><p>The broker can be installed on the same computer as MQTT Remote.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>it must have Python 3.X installed.</p>
+<ul>
+<li><p>The app was developed with python 3.9 and:</p>
+<ul class="simple">
+<li><p>paho-mqtt 1.5.1</p></li>
+<li><p>PyYAML 5.4.1</p></li>
+<li><p>pyperclip 1.8.2</p></li>
+</ul>
+<p>however it should work with a range of other versions but this is yet to
+be confirmed with formal testing.</p>
+</li>
+<li><p><a class="reference external" href="https://www.python.org/">https://www.python.org/</a></p></li>
+</ul>
+</li>
+<li><p>if you’re using git clone during installation then git must be installed.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a></p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="how-do-i-install-it">
+<h2>11.0 - How do I install it?<a class="headerlink" href="#how-do-i-install-it" title="Permalink to this headline">¶</a></h2>
+<p>For some linux distributions you may have to substitute ‘python3’ for
+‘python’ in the instructions below.</p>
+<ul>
+<li><p>Copy this project to a &lt;directory&gt; of your choice using either git clone or a zip file:</p>
+<ul>
+<li><p>git clone:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">directory</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jamesgagg</span><span class="o">/</span><span class="n">MQTT_Remote</span>
+</pre></div>
+</div>
+</li>
+<li><p>zip file:</p>
+<ul class="simple">
+<li><p>download the zip from:
+<a class="reference external" href="https://github.com/jamesgagg/MQTT_Remote/archive/master.zip">https://github.com/jamesgagg/MQTT_Remote/archive/master.zip</a></p></li>
+<li><p>extract it into &lt;directory&gt;</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Change directory to the root of the project you just downloaded:</p>
+<ul>
+<li><p>Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="s2">&quot;&lt;your drive&gt;:\&lt;your path&gt;\&lt;directory&gt;\&lt;project root&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="s2">&quot;/&lt;your path&gt;/&lt;directory&gt;/&lt;project root&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Depending on which method you used to copy the project files &lt;project root&gt;
+should be either:</p>
+<ul class="simple">
+<li><p>‘MQTT_Remote’</p></li>
+<li><p>‘MQTT_Remote-master’ or</p></li>
+</ul>
+</li>
+<li><p>Create a new python environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">env</span>
+</pre></div>
+</div>
+</li>
+<li><p>Activate the new environment:</p>
+<ul>
+<li><p>Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">env</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+</li>
+<li><p>Linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Install MQTT remote:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+</pre></div>
+</div>
+<ul>
+<li><p>if you get an error update pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+</pre></div>
+</div>
+<p>and try again.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="how-do-i-use-mqtt-remote">
+<h2>12.0 - How do I use MQTT Remote?<a class="headerlink" href="#how-do-i-use-mqtt-remote" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-do-i-switch-to-the-correct-virtual-environment">
+<h3>12.1 - How do I switch to the correct virtual environment?<a class="headerlink" href="#how-do-i-switch-to-the-correct-virtual-environment" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>If you’re in another virtual environment type the following at the command
+line to exit:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+</pre></div>
+</div>
+<p>If you’re not in another virtual environment then skip this step and
+proceed to 2.</p>
+</li>
+<li><p>At the command line change your path to the root directory of the project,
+i.e. &lt;project root&gt; in <a class="reference internal" href="#how-do-i-install-it">11.0 - How do I install it?</a>.</p></li>
+<li><p>At the command line type the following:</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">env</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+</li>
+<li><p>Linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">env</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="how-do-i-change-directory-to-the-package-directory">
+<h3>12.2 - How do I change directory to the package directory?<a class="headerlink" href="#how-do-i-change-directory-to-the-package-directory" title="Permalink to this headline">¶</a></h3>
+<p>Type the following at the command line to find the package directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mr_where</span>
+</pre></div>
+</div>
+<p>This should then return a string of the package directory. As it will be
+different in each case let’s represent it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">package</span> <span class="n">directory</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Then to change directory it’s simple a case of typing the following at the
+command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="s2">&quot;&lt;package directory&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-do-i-configure-mqtt-remote">
+<h3>12.3 - How do I configure MQTT Remote?<a class="headerlink" href="#how-do-i-configure-mqtt-remote" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Make sure you’re in the correct virtual environment:</p>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a></p></li>
+</ul>
+</li>
+<li><p>At the command line change the directory to where the MQTT Remote package
+was installed and find the ‘config.yaml’ file.</p>
+<ul class="simple">
+<li><p>If you don’t know where the package was installed then see
+<a class="reference internal" href="#how-do-i-change-directory-to-the-package-directory">12.2 - How do I change directory to the package directory?</a></p></li>
+</ul>
+</li>
+<li><p>Open ‘config.yaml’ with an editor of your choice. It’s contents will look
+something like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">logging</span><span class="p">:</span>
+  <span class="nt">level</span><span class="p">:</span> <span class="s">&quot;DEBUG&quot;</span>
+  <span class="nt">log_format</span><span class="p">:</span> <span class="s">&#39;%(asctime)s</span><span class="nv">  </span><span class="s">%(name)s</span><span class="nv">  </span><span class="s">%(levelname)s:</span><span class="nv"> </span><span class="s">%(message)s&#39;</span>
+  <span class="nt">output_file</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;mqtt_remote.log&quot;</span>
+    <span class="nt">max_size</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5242880</span>
+    <span class="nt">max_backups</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+  <span class="nt">log_base_client</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+
+<span class="nt">mqtt_broker</span><span class="p">:</span>
+  <span class="nt">ip</span><span class="p">:</span> <span class="s">&quot;192.168.1.123&quot;</span>
+  <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1883</span>
+  <span class="nt">user_name</span><span class="p">:</span> <span class="s">&#39;monty&#39;</span>
+  <span class="nt">password_required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+  <span class="nt">password</span><span class="p">:</span> <span class="s">&#39;monty_python&#39;</span>
+  <span class="nt">keepalive</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">60</span>
+
+<span class="nt">mqtt_session</span><span class="p">:</span>
+  <span class="nt">protocol</span><span class="p">:</span> <span class="s">&quot;3.1.1&quot;</span>
+  <span class="nt">transport</span><span class="p">:</span> <span class="s">&#39;tcp&#39;</span>
+  <span class="nt">clean</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+
+<span class="nt">subscriptions</span><span class="p">:</span>
+  <span class="nt">this_mqtt_client</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="s">&quot;spam&quot;</span>
+    <span class="nt">qos</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Here’s an explanation of the yaml key-value pairs:</p>
+<ul>
+<li><p><strong>logging</strong>: the parameters for setting up the logging:</p>
+<ul class="simple">
+<li><p><strong>level</strong>: the required minimum logging level, five choices:</p>
+<ul>
+<li><p>“DEBUG”</p></li>
+<li><p>“INFO”</p></li>
+<li><p>“WARNING”</p></li>
+<li><p>“ERROR”</p></li>
+<li><p>“CRITICAL”</p></li>
+</ul>
+</li>
+</ul>
+<p>see: <a class="reference external" href="https://docs.python.org/3/library/logging.html#logging-levels">https://docs.python.org/3/library/logging.html#logging-levels</a> for
+more information.</p>
+<ul class="simple">
+<li><p><strong>log_format</strong>: the required format for the logs - see:
+<a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Formatter">https://docs.python.org/3/library/logging.html#logging.Formatter</a> for
+more information.</p></li>
+<li><p><strong>output_file</strong>: the parameters for the file to save all logging data
+to:</p>
+<ul>
+<li><p><strong>name</strong>: the name of the logging file.</p></li>
+<li><p><strong>max_size</strong>: the maximum allowable size of the logging file.</p></li>
+<li><p><strong>max_backups</strong>: the maximum number of logging files allowed before
+they start being overwritten.</p></li>
+</ul>
+</li>
+<li><p><strong>log_base_client</strong>: whether to add the logs from the underlying MQTT
+Client (Paho) into the logs for this app, two choices:</p>
+<ul>
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>mqtt_broker</strong>: the parameters for setting up access to the MQTT broker:</p>
+<ul class="simple">
+<li><p><strong>ip</strong>: the IP address of the MQTT broker.</p></li>
+<li><p><strong>port</strong>: the port the MQTT broker uses for MQTT traffic.</p></li>
+<li><p><strong>user_name</strong>: the user name for MQTT broker authentication.</p></li>
+<li><p><strong>password_required</strong>: whether the MQTT broker requires a password for
+authentication, two choices:</p>
+<ul>
+<li><p>True</p></li>
+<li><p>False</p></li>
+</ul>
+</li>
+<li><p><strong>password</strong>: the password for MQTT broker authentication:</p>
+<ul>
+<li><p>If no password is required:</p>
+<ul>
+<li><p>Leave blank.</p></li>
+<li><p>Make sure ‘password_required’ is set to False.</p></li>
+</ul>
+</li>
+<li><p>If you don’t want to store your password in the yaml file in plain
+text but instead want to be prompted for it each time you start the
+app:</p>
+<ul>
+<li><p>Leave blank.</p></li>
+<li><p>Make sure ‘password_required’ is set to True.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>keepalive</strong>: The maximum time, in integer seconds, that you want the
+client to remain quiet without sending an MQTT packet to the broker to
+confirm it is still connected.</p></li>
+</ul>
+</li>
+<li><p><strong>mqtt_session</strong>: the parameters for setting up each MQTT session:</p>
+<ul class="simple">
+<li><p><strong>protocol</strong>: The MQTT protocol that your MQTT broker uses. Can be:</p>
+<ul>
+<li><p>“3.1”</p></li>
+<li><p>“3.1.1”</p></li>
+<li><p>“5”</p></li>
+</ul>
+</li>
+<li><p><strong>transport</strong>: The MQTT network transport type. Can be:</p>
+<ul>
+<li><p>“websockets”</p></li>
+<li><p>“tcp”</p></li>
+</ul>
+</li>
+<li><p><strong>clean</strong>: Determines whether the broker will remove all information
+about the client when it disconnects, two choices:</p>
+<ul>
+<li><p>True</p>
+<ul>
+<li><p>All client information will be removed.</p></li>
+</ul>
+</li>
+<li><p>False</p>
+<ul>
+<li><p>Client information will be retained.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>subscriptions</strong>: the parameters for setting up the topic for the client
+to subscribe to:</p>
+<ul class="simple">
+<li><p><strong>this_mqtt_client</strong>:</p>
+<ul>
+<li><p><strong>name</strong>: The name you want to give to the MQTT Remote’s MQTT Client.
+The client will subscribe to an MQTT topic with this name in order
+to receive relevant MQTT messages. All MQTT messages to be received
+by MQTT Remote must be publishing using this name as the MQTT topic.</p></li>
+<li><p><strong>qos</strong>: the desired Quality Of Service for MQTT messages.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Using the information above change the ‘config.yaml’ file to match with your
+particular set up.</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-start-mqtt-remote">
+<h3>12.4 - How do I start MQTT Remote?<a class="headerlink" href="#how-do-i-start-mqtt-remote" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Make sure the environment you created is activated, if not see:
+<a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a></p></li>
+<li><p>Then type the following at the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mr_start</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="how-do-i-stop-mqtt-remote">
+<h3>12.5 - How do I stop MQTT Remote?<a class="headerlink" href="#how-do-i-stop-mqtt-remote" title="Permalink to this headline">¶</a></h3>
+<p>Make sure the the command line window where MQTT Remote is running is
+selected and then simply type hold down ‘Ctrl’ and hit ‘C’. MQTT
+Remote should then shut down gracefully.</p>
+</div>
+<div class="section" id="restarting-mqtt-remote">
+<h3>12.6 - Restarting MQTT Remote<a class="headerlink" href="#restarting-mqtt-remote" title="Permalink to this headline">¶</a></h3>
+<p>Each time a change is made to the configuration file or a callback MQTT Remote
+will need to be stopped and restarted for those changes to take effect. To do
+this follow the instructions in:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#how-do-i-stop-mqtt-remote">12.5 - How do I stop MQTT Remote?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-start-mqtt-remote">12.4 - How do I start MQTT Remote?</a></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="local-callbacks">
+<h3>12.7 - Local callbacks<a class="headerlink" href="#local-callbacks" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="what-is-a-local-callback">
+<h4>12.7.1 - What is a local callback?<a class="headerlink" href="#what-is-a-local-callback" title="Permalink to this headline">¶</a></h4>
+<p>A local callback is a callback that’s run locally from a sub directory in the
+installed package directory.</p>
+<p>(The other type of callback is a plugin callback, see <a class="reference internal" href="#to-do">15 - To do</a>.)</p>
+</div>
+<div class="section" id="what-are-the-rules-for-local-callbacks">
+<h4>12.7.2 - What are the rules for local callbacks?<a class="headerlink" href="#what-are-the-rules-for-local-callbacks" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The code for local callbacks must be of the form defined in the
+<strong>‘class_template.txt’</strong> file found in the package installation directory.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you don’t know where the package was installed then see
+<a class="reference internal" href="#how-do-i-change-directory-to-the-package-directory">12.2 - How do I change directory to the package directory?</a></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>The code for each callback must be contained in a python file with a
+<strong>‘.py’</strong> extension within the <strong>‘local_callbacks’</strong> sub directory of the
+package installation directory.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you don’t know where the package was installed then see
+<a class="reference internal" href="#how-do-i-change-directory-to-the-package-directory">12.2 - How do I change directory to the package directory?</a></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Multiple callback classes, as defined in <strong>‘class_template.txt’</strong>, can be
+held within a single <strong>‘.py’</strong> file.</p></li>
+<li><p>Multiple <strong>‘.py’</strong> callback files can exist within the
+<strong>‘local_callbacks’</strong> sub directory.</p>
+<ul class="simple">
+<li><p>All enabled callbacks in all files within the <strong>‘local_callbacks’</strong> sub
+directory will be automatically found and loaded by MQTT Remote at run time.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="how-do-i-add-a-local-callback">
+<h4>12.7.3 - How do I add a local callback?<a class="headerlink" href="#how-do-i-add-a-local-callback" title="Permalink to this headline">¶</a></h4>
+<p>There are a few choices for how we can add a new callback:</p>
+<p>(For 2. and 3. you will need to be in the correct virtual environment, see:
+<a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a>)</p>
+<ol class="arabic simple">
+<li><p>Manually:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Find the ‘class_template.txt’ file.</p>
+<ul>
+<li><p>For it’s location see:
+<a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a></p></li>
+</ul>
+</li>
+<li><p>Open the file.</p></li>
+<li><p>Copy the file contents.</p></li>
+<li><p>Open the target ‘.py’ file in the ‘local_callbacks’ sub directory:</p>
+<ul>
+<li><p>see <a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a> for the location
+of the ‘local_callbacks’ sub directory.</p></li>
+<li><p>Create a new ‘.py’ file first if required or…</p></li>
+<li><p>Choose an existing ‘.py’ file that already contains a working callback.</p></li>
+</ul>
+</li>
+<li><p>Paste the copied file contents into the ‘.py’ file.</p>
+<ul>
+<li><p>Don’t copy and paste the import statement into an existing ‘.py’ file as
+only one is required per file.</p></li>
+</ul>
+</li>
+<li><p>Edit the copied class to suit your needs.</p>
+<ul>
+<li><p>See: <a class="reference internal" href="#how-do-i-make-a-callback-do-what-i-want">12.8 - How do I make a callback do what I want?</a></p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Semi-automatically:</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>Type the following at the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mr_copy_clip</span>
+</pre></div>
+</div>
+<p>(This command uses copy/paste mechanisms tied into display functionality.
+For this reason if the computer you are running is headless then this command
+may not work.)</p>
+</li>
+<li><p>Open the target ‘.py’ file in the ‘local_callbacks’ sub directory</p>
+<ul class="simple">
+<li><p>see <a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a> for the location
+of the ‘local_callbacks’ sub directory.</p></li>
+<li><p>Create a new ‘.py’ file first if required or…</p></li>
+<li><p>Choose an existing ‘.py’ file that already contains a working callback.</p></li>
+</ul>
+</li>
+<li><p>Paste the copied file contents into the ‘.py’ file.</p>
+<ul class="simple">
+<li><p>Don’t copy and paste the import statement into an existing ‘.py’ file as
+only one is required per file.</p></li>
+</ul>
+</li>
+<li><p>Open the newly created file and edit the copied class to suit your needs.</p>
+<ul class="simple">
+<li><p>See: <a class="reference internal" href="#how-do-i-make-a-callback-do-what-i-want">12.8 - How do I make a callback do what I want?</a></p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Automatically:</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>Type the following at the command line and respond to the prompts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mr_create_callback_file</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the newly created file in the ‘local_callbacks’ sub directory</p>
+<ul class="simple">
+<li><p>see <a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a> for the location
+of the ‘local_callbacks’ sub directory.</p></li>
+</ul>
+</li>
+<li><p>Edit the copied class to suit your needs.</p>
+<ul class="simple">
+<li><p>See: <a class="reference internal" href="#how-do-i-make-a-callback-do-what-i-want">12.8 - How do I make a callback do what I want?</a></p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="how-do-i-use-an-existing-local-callback">
+<h4>12.7.4 - How do I use an existing local callback?<a class="headerlink" href="#how-do-i-use-an-existing-local-callback" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>Copy or move the ‘.py’ file that contains the existing callback into the
+‘local_callbacks’ directory.</p>
+<ul class="simple">
+<li><p>To find the location of your ‘local_callbacks’ directory please
+see <a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a>.</p></li>
+</ul>
+</li>
+<li><p>Examine the imports section of the ‘.py’ file to see if the callback
+requires any external libraries that aren’t already installed.</p>
+<ul>
+<li><p>To get a list of the external libraries that are already installed:</p>
+<ul>
+<li><p>Make sure you are in the correct virtual environment, see
+<a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a></p></li>
+<li><p>Type the following at the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">freeze</span>
+</pre></div>
+</div>
+</li>
+<li><p>To install any missing external libraries please see the home page of each
+individual library for instructions. Generally though external libraries
+are installed in the following way:</p>
+<ul>
+<li><p>Make sure you are in the correct virtual environment, see
+<a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a></p></li>
+<li><p>Type the following at the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">library</span> <span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="how-do-i-make-a-callback-do-what-i-want">
+<h3>12.8 - How do I make a callback do what I want?<a class="headerlink" href="#how-do-i-make-a-callback-do-what-i-want" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start off by seeing what a raw callback taken from ‘class_template.txt’
+looks like. We can then break this down into its constituent parts to see what
+we may need to change to get it to do what we want.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mqtt_remote.message</span> <span class="kn">import</span> <span class="n">CommandMessageCallback</span>
+
+
+
+<span class="k">class</span> <span class="nc">ClassName</span><span class="p">(</span><span class="n">CommandMessageCallback</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Class docstring</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Constructor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># self.disabled = True # optional</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;message&#39;</span> <span class="c1"># required</span>
+    <span class="c1"># self.config = None # optional</span>
+    <span class="c1"># self.mqtt_publish = None # optional</span>
+
+<span class="nd">@property</span>
+<span class="k">def</span> <span class="nf">message_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Getter</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The message name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inbound_message</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The code to be executed when a matching MQTT message is received</span>
+
+<span class="sd">    Execution occurs when a CommandMessage containing a &#39;payload[&#39;command&#39;]&#39; value that</span>
+<span class="sd">    matches with self._message_name is received by CommandMessageCallbackCaller</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        inbound_message (CommandMessage): The CommandMessage with a &#39;payload[&#39;command&#39;]&#39;</span>
+<span class="sd">            value that matches with self._message_name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="section" id="imports">
+<h4>12.8.1 - Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h4>
+<p>This is the statement to import the base class that our callback class inherits
+from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mqtt_remote.message</span> <span class="kn">import</span> <span class="n">CommandMessageCallback</span>
+</pre></div>
+</div>
+<p>This line should only be included once per ‘.py’ file.</p>
+</div>
+<div class="section" id="callback-class">
+<h4>12.8.2 - Callback class<a class="headerlink" href="#callback-class" title="Permalink to this headline">¶</a></h4>
+<p>The lines from ‘class ClassName(CommandMessageCallback):’ to ‘pass’ define
+the callback class.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassName</span><span class="p">(</span><span class="n">CommandMessageCallback</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Class docstring</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Constructor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># self.disabled = True # optional</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;message&#39;</span> <span class="c1"># required</span>
+    <span class="c1"># self.config = None # optional</span>
+    <span class="c1"># self.mqtt_publish = None # optional</span>
+
+<span class="nd">@property</span>
+<span class="k">def</span> <span class="nf">message_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Getter</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The message name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inbound_message</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The code to be executed when a matching MQTT message is received</span>
+
+<span class="sd">    Execution occurs when a CommandMessage containing a &#39;payload[&#39;command&#39;]&#39; value that</span>
+<span class="sd">    matches with self._message_name is received by CommandMessageCallbackCaller</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        inbound_message (CommandMessage): The CommandMessage with a &#39;payload[&#39;command&#39;]&#39;</span>
+<span class="sd">            value that matches with self._message_name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>Within the callback class three methods are defined:</p>
+<ol class="arabic simple">
+<li><p>__init__</p></li>
+<li><p>message_name</p></li>
+<li><p>execute</p></li>
+</ol>
+<p>We only need to be concerned with 1. and 3. as 2. is just a simple getter
+method that we’re not required to change.</p>
+</div>
+<div class="section" id="init-method">
+<h4>12.8.2.1 - __init__ method<a class="headerlink" href="#init-method" title="Permalink to this headline">¶</a></h4>
+<p>This is the constructor for the class. This is the method that’s called when
+an object is created from the class.</p>
+<p>There are four important lines in this method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># self.disabled = True # optional</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;message&#39;</span> <span class="c1"># required</span>
+<span class="c1"># self.config = None # optional</span>
+<span class="c1"># self.mqtt_publish = None # optional</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong># self.disabled = True # optional</strong></p>
+<p>If</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># self.disabled = True # optional&#39;</span>
+</pre></div>
+</div>
+<p>is uncommented, i.e. changed to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">disabled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># optional</span>
+</pre></div>
+</div>
+<p>then this will disable this callback. This means if an MQTT message that
+matches with this callback is received then the callback won’t be called.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>self._message_name = ‘message’ # required</strong></p>
+<p>In the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;message&#39;</span> <span class="c1"># required</span>
+</pre></div>
+</div>
+<p>‘message’ must be changed to the string that you want to use to trigger the
+callback to be called, i.e. the &lt;command&gt; string in the standardised MQTT
+message payload as defined in:
+<a class="reference internal" href="#why-standardised-mqtt-message-payloads-and-what-do-they-look-like">8.0 - Why ‘standardised’ MQTT message payloads and what do they look like?</a></p>
+<p>As an example: if you want the following MQTT message payload to trigger
+your callback:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{“command”: “do_something”, “attributes”: {}}
+</pre></div>
+</div>
+<p>then you’d need to have the following line in the constructor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;do_something&#39;</span> <span class="c1"># required</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong># self.config = None # optional</strong></p>
+<p>If</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># self.config = None # optional</span>
+</pre></div>
+</div>
+<p>is uncommented to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># optional</span>
+</pre></div>
+</div>
+<p>then you will be able to access all of the configuration data via
+‘self.config’ within the code you define in the ‘execute’ method.</p>
+<p>The configuration data is stored in a python dictionary so can be accessed
+with traditional techniques. As an example:</p>
+<blockquote>
+<div><p>To get the MQTT broker IP address from the configuration you could write
+the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_broker_ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;mqtt_broker&#39;</span><span class="p">][</span><span class="s1">&#39;ip&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>see ‘mqtt_remote.config module’ in the API documents to get a better
+idea of the information available.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong># self.mqtt_publish = None # optional</strong></p>
+<p>If</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># self.mqtt_publish = None # optional</span>
+</pre></div>
+</div>
+<p>is uncommented to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_publish</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># optional</span>
+</pre></div>
+</div>
+<p>then ‘self.mqtt_publish’ can be used to publish MQTT messages within the
+code you define in the ‘execute’ method, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">mqtt_publish</span><span class="p">(</span><span class="s1">&#39;spam&#39;</span><span class="p">,</span> <span class="s1">&#39;I love spam!&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would result in the payload ‘I love spam!’ being sent to the MQTT broker
+with a request to publish it to devices subscribed to the ‘spam’ topic.
+This would be with a quality of service of 0 and an instruction for the
+message not to be retained.</p>
+<p>See the ‘mqtt_remote.mqtt_client module’ section of the API documentation
+for more information.</p>
+</div>
+<div class="section" id="execute-method">
+<h4>12.8.2.2 - execute method<a class="headerlink" href="#execute-method" title="Permalink to this headline">¶</a></h4>
+<p>Here</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">pass</span>
+</pre></div>
+</div>
+<p>should be replaced with the code you want to run when the callback is called,
+e.g. if you wanted to print something to the command line when you received
+a message then you’d just need to replace ‘pass’ with something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yeah! I received a message.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>so then your execute method would look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inbound_message</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;The code to be executed when a matching MQTT message is received</span>
+
+<span class="sd">  Execution occurs when a CommandMessage containing a &#39;payload[&#39;command&#39;]&#39; value that</span>
+<span class="sd">  matches with self._message_name is received by CommandMessageCallbackCaller</span>
+
+<span class="sd">  Args:</span>
+<span class="sd">      inbound_message (CommandMessage): The CommandMessage with a &#39;payload[&#39;command&#39;]&#39;</span>
+<span class="sd">          value that matches with self._message_name</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yeah! I received a message.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the execute method has ‘inbound_message’ as an argument. This is
+the inbound message payload in dictionary form and is always supplied when the
+execute method is called.</p>
+<p>Because the inbound message payload is a dictionary it can be accessed using
+standard python dictionary techniques, e.g. to access the attributes section
+of a payload message you’d use something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">attributes</span> <span class="o">=</span> <span class="n">inbound_message</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>13 - Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-adding-a-local-callback-to-sum-two-positive-integers">
+<h3>13.1 - Example 1 - Adding a local callback to sum two positive integers<a class="headerlink" href="#example-1-adding-a-local-callback-to-sum-two-positive-integers" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="problem">
+<h4>13.1.1 - Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h4>
+<p>Let’s say we have a situation where we’re using a home automation server and
+we need to use a remote computer to sum two positive integers and return that
+value to us.</p>
+<p>The MQTT client running on the home automation server is subscribed to the
+‘HA’ topic and so will receive any messages published with this name.</p>
+<p>Both the remote computer and the home automation server are on the same local
+network. An MQTT broker is also running on the network.</p>
+<p>The remote computer has already had MQTT Remote installed, configured and
+started.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-do-i-install-it">11.0 - How do I install it?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-configure-mqtt-remote">12.3 - How do I configure MQTT Remote?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-start-mqtt-remote">12.4 - How do I start MQTT Remote?</a></p></li>
+</ul>
+<p>MQTT Remote on the remote computer has been set up to subscribe to the ‘RC’
+topic.</p>
+</div>
+<div class="section" id="outline-solution">
+<h4>13.1.2 - Outline solution<a class="headerlink" href="#outline-solution" title="Permalink to this headline">¶</a></h4>
+<p>Our plan to solve the problem could then be as simple as doing the following
+on our remote computer:</p>
+<ul>
+<li><p>Writing a callback for MQTT Remote that does the following when a particular
+MQTT message is received:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Calculates the sum of the two positive integers received in that message.</p></li>
+<li><p>Sends an MQTT message containing the sum to the ‘HA’ topic so that it
+will be received by the home automation server.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Quickly stopping and restarting MQTT Remote to put the changes into place.</p></li>
+</ul>
+</div>
+<div class="section" id="designing-the-payload-message">
+<h4>13.1.3 - Designing the payload message<a class="headerlink" href="#designing-the-payload-message" title="Permalink to this headline">¶</a></h4>
+<p>In order to create our callback later on we first need to decide what
+information the callback will need to receive. We then need to decide how
+we’re going to structure that information within the standardised MQTT
+message payload. This is so we know where we’re going to be able to find
+specific items of information within the payload when we write the callback.</p>
+<p>We know from
+‘<a class="reference internal" href="#why-standardised-mqtt-message-payloads-and-what-do-they-look-like">8.0 - Why ‘standardised’ MQTT message payloads and what do they look like?</a>’
+that the standardised MQTT message form that MQTT Remote must receive messages
+in is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{“command”: “&lt;command&gt;”, “attributes”: {&lt;attribute key-value pairs&gt;}}
+</pre></div>
+</div>
+<p>so let’s start off by setting &lt;command&gt; to a nice descriptive name, i.e.:
+“sum_positive_ints”</p>
+<p>For the &lt;attribute key-value pairs&gt;:</p>
+<ul class="simple">
+<li><p>We know the message we’re sending needs to contain two positive integers
+otherwise we’ll have nothing to sum.</p></li>
+<li><p>We also know we’ll need the MQTT Remote app to send an MQTT message to the
+broker so that it can forward the calculated sum onto the home automation
+server. We therefore know that we need to include all of the information
+necessary to send this MQTT message.</p>
+<ul>
+<li><p>From <a class="reference internal" href="#init-method">12.8.2.1 - __init__ method</a> we know that to send an MQTT message
+using MQTT remote the following information is required:</p>
+<ul>
+<li><p>An MQTT topic</p></li>
+<li><p>An MQTT message payload</p></li>
+<li><p>An MQTT qos value</p></li>
+<li><p>An MQTT retain flag</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>With the above in mind we can structure our &lt;attribute key-value pairs&gt; to be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;integer_one&quot;: &lt;int&gt;,
+&quot;integer_two&quot;: &lt;int&gt;,
+&quot;return_message&quot;: {&quot;topic&quot;: &lt;str&gt;,
+                   &quot;qos&quot;: &lt;int&gt;,
+                   &quot;retain&quot;: &lt;bool&gt;}
+</pre></div>
+</div>
+<p>The final standardised payload would therefore be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;command&quot;: &quot;sum_positive_ints&quot;,
+ &quot;attributes&quot;: {&quot;integer_one&quot;: &lt;int&gt;,
+                &quot;integer_two&quot;: &lt;int&gt;,
+                &quot;return_message&quot;: {&quot;topic&quot;: &lt;str&gt;,
+                                   &quot;qos&quot;: &lt;int&gt;,
+                                   &quot;retain&quot;: &lt;bool&gt;}}}
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-local-callback-file-from-the-template">
+<h4>13.1.4 - Creating a local callback file from the template<a class="headerlink" href="#creating-a-local-callback-file-from-the-template" title="Permalink to this headline">¶</a></h4>
+<p>The template code we need to create our local callback is contained within the
+‘class_template.txt’ file (for it’s location see:
+‘<a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a>’).</p>
+<p>As seen in ‘<a class="reference internal" href="#how-do-i-add-a-local-callback">12.7.3 - How do I add a local callback?</a>’ there are three ways we
+can get that code into a file. After sure we’re in the correct virtual
+environment, see:
+‘<a class="reference internal" href="#how-do-i-switch-to-the-correct-virtual-environment">12.1 - How do I switch to the correct virtual environment?</a>’ we’re going to
+use the most convenient option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mr_create_callback_file</span>
+</pre></div>
+</div>
+<p>This will result in us being prompted for a file name to save the file to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">filename</span> <span class="n">to</span> <span class="n">save</span> <span class="n">the</span> <span class="n">callback</span> <span class="n">to</span><span class="o">.</span> <span class="n">The</span> <span class="n">filename</span> <span class="n">must</span> <span class="n">end</span>
+<span class="k">with</span> <span class="s1">&#39;.py&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="s1">&#39;example.py&#39;</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Lets type in the file name ‘sum_positive_ints.py’ and press enter.</p>
+<p>If we now check the ‘local_callbacks’ folder in the package installation
+directory we’ll see that we now have that new file: ‘sum_positive_ints.py’.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If you don’t know where the package was installed then see
+<a class="reference internal" href="#how-do-i-change-directory-to-the-package-directory">12.2 - How do I change directory to the package directory?</a></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="editing-the-new-local-callback-file">
+<h4>13.1.5 - Editing the new local callback file<a class="headerlink" href="#editing-the-new-local-callback-file" title="Permalink to this headline">¶</a></h4>
+<p>If we open ‘sum_positive_ints.py’ in our editor of choice we can see the
+starting point for our code is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mqtt_remote.message</span> <span class="kn">import</span> <span class="n">CommandMessageCallback</span>
+
+
+
+<span class="k">class</span> <span class="nc">ClassName</span><span class="p">(</span><span class="n">CommandMessageCallback</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Class docstring</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Constructor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># self.disabled = True # optional</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;message&#39;</span> <span class="c1"># required</span>
+    <span class="c1"># self.config = None # optional</span>
+    <span class="c1"># self.mqtt_publish = None # optional</span>
+
+<span class="nd">@property</span>
+<span class="k">def</span> <span class="nf">message_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Getter</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The message name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span>
+
+<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inbound_message</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The code to be executed when a matching MQTT message is received</span>
+
+<span class="sd">    Execution occurs when a CommandMessage containing a &#39;payload[&#39;command&#39;]&#39; value that</span>
+<span class="sd">    matches with self._message_name is received by CommandMessageCallbackCaller</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        inbound_message (CommandMessage): The CommandMessage with a &#39;payload[&#39;command&#39;]&#39;</span>
+<span class="sd">            value that matches with self._message_name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="c1"># Changes to make to the above to make it into usable code:</span>
+<span class="c1">#     Required:</span>
+<span class="c1">#         - Line 5: Replace &#39;ClassName&#39; with an appropriate class name</span>
+<span class="c1">#         - Line 12: Replace &#39;message&#39; after &#39;self._message_name =&#39; with an appropriate message</span>
+<span class="c1">#                    name</span>
+<span class="c1">#         - Line 35: Replace &#39;pass&#39; in the execute method with the code to execute if an MQTT</span>
+<span class="c1">#                    message json &#39;payload[&#39;command&#39;]&#39; value matches self._message_name</span>
+<span class="c1">#     Optional:</span>
+<span class="c1">#         - Lines 6-7: Update the class docstring</span>
+<span class="c1">#         - Line 11: uncomment this line if you want to disable this callback (useful for</span>
+<span class="c1">#                    debugging)</span>
+<span class="c1">#         - Line 13: uncomment this line if you want to have access to the app configuration</span>
+<span class="c1">#                    from this class (via self.config)</span>
+<span class="c1">#         - Line 14: uncomment this line if you want to have access to the MQTT message publisher</span>
+<span class="c1">#                    via self.mqtt_publish (required if you want to send an MQTT message)</span>
+</pre></div>
+</div>
+<p>For this example it makes sense to introduce the finished code below and then
+explain what was added and changed (highlighted) in order to form our
+solution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">mqtt_remote.message</span> <span class="kn">import</span> <span class="n">CommandMessageCallback</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>
+<span class="hll"><span class="linenos"> 5</span><span class="k">class</span> <span class="nc">SumPositiveInts</span><span class="p">(</span><span class="n">CommandMessageCallback</span><span class="p">):</span>
+</span><span class="hll"><span class="linenos"> 6</span>    <span class="sd">&quot;&quot;&quot;Sends an MQTT message containing the sum of the two positive integers received in the</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="sd">    inbound message</span>
+</span><span class="hll"><span class="linenos"> 8</span>
+</span><span class="hll"><span class="linenos"> 9</span><span class="sd">    Requires an inbound message MQTT payload of the form:</span>
+</span><span class="hll"><span class="linenos">10</span>
+</span><span class="hll"><span class="linenos">11</span><span class="sd">        {&quot;command&quot;: &quot;sum_positive_ints&quot;,</span>
+</span><span class="hll"><span class="linenos">12</span><span class="sd">         &quot;attributes&quot;: {&quot;integer_one&quot;: &lt;int&gt;,</span>
+</span><span class="hll"><span class="linenos">13</span><span class="sd">                        &quot;integer_two&quot;: &lt;int&gt;,</span>
+</span><span class="hll"><span class="linenos">14</span><span class="sd">                        &quot;return_message&quot;: {&quot;topic&quot;: &lt;str&gt;,</span>
+</span><span class="hll"><span class="linenos">15</span><span class="sd">                                           &quot;qos&quot;: &lt;int&gt;,</span>
+</span><span class="hll"><span class="linenos">16</span><span class="sd">                                           &quot;retain&quot;: &lt;bool&gt;}}}</span>
+</span><span class="hll"><span class="linenos">17</span><span class="sd">    &quot;&quot;&quot;</span>
+</span><span class="linenos">18</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">19</span>        <span class="sd">&quot;&quot;&quot;Constructor</span>
+<span class="linenos">20</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">21</span>        <span class="c1"># self.disabled = True # optional</span>
+<span class="hll"><span class="linenos">22</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span> <span class="o">=</span> <span class="s1">&#39;sum_positive_ints&#39;</span> <span class="c1"># required</span>
+</span><span class="linenos">23</span>        <span class="c1"># self.config = None # optional</span>
+<span class="hll"><span class="linenos">24</span>        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_publish</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># optional</span>
+</span><span class="linenos">25</span>
+<span class="linenos">26</span>    <span class="nd">@property</span>
+<span class="linenos">27</span>    <span class="k">def</span> <span class="nf">message_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">28</span>        <span class="sd">&quot;&quot;&quot;Getter</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="sd">        Returns:</span>
+<span class="linenos">31</span><span class="sd">            str: The message name</span>
+<span class="linenos">32</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">33</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_name</span>
+<span class="linenos">34</span>
+<span class="linenos">35</span>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inbound_message</span><span class="p">):</span>
+<span class="linenos">36</span>        <span class="sd">&quot;&quot;&quot;The code to be executed when a matching MQTT message is received</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="sd">        Execution occurs when a CommandMessage containing a &#39;payload[&#39;command&#39;]&#39; value that</span>
+<span class="linenos">39</span><span class="sd">        matches with self._message_name is received by CommandMessageCallbackCaller</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="sd">        Args:</span>
+<span class="linenos">42</span><span class="sd">            inbound_message (CommandMessage): The CommandMessage with a &#39;payload[&#39;command&#39;]&#39;</span>
+<span class="linenos">43</span><span class="sd">                value that matches with self._message_name</span>
+<span class="linenos">44</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="hll"><span class="linenos">45</span>        <span class="n">integer_one</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inbound_message</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;integer_one&#39;</span><span class="p">])</span>
+</span><span class="hll"><span class="linenos">46</span>        <span class="n">integer_two</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">inbound_message</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;integer_two&#39;</span><span class="p">])</span>
+</span><span class="hll"><span class="linenos">47</span>        <span class="n">outbound_topic</span> <span class="o">=</span> <span class="n">inbound_message</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;return_message&#39;</span><span class="p">][</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span>
+</span><span class="hll"><span class="linenos">48</span>        <span class="n">outbound_qos</span> <span class="o">=</span> <span class="n">inbound_message</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;return_message&#39;</span><span class="p">][</span><span class="s1">&#39;qos&#39;</span><span class="p">]</span>
+</span><span class="hll"><span class="linenos">49</span>        <span class="n">outbound_retain</span> <span class="o">=</span> <span class="n">inbound_message</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="s1">&#39;return_message&#39;</span><span class="p">][</span><span class="s1">&#39;retain&#39;</span><span class="p">]</span>
+</span><span class="linenos">50</span>
+<span class="hll"><span class="linenos">51</span>        <span class="nb">sum</span> <span class="o">=</span> <span class="n">integer_one</span> <span class="o">+</span> <span class="n">integer_two</span>
+</span><span class="hll"><span class="linenos">52</span>        <span class="n">outbound_payload</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</span><span class="linenos">53</span>
+<span class="hll"><span class="linenos">54</span>        <span class="bp">self</span><span class="o">.</span><span class="n">mqtt_publish</span><span class="p">(</span><span class="n">outbound_topic</span><span class="p">,</span> <span class="n">outbound_payload</span><span class="p">,</span> <span class="n">outbound_qos</span><span class="p">,</span> <span class="n">outbound_retain</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Taking a lead from ‘<a class="reference internal" href="#callback-class">12.8.2 - Callback class</a>’:</p>
+<ul class="simple">
+<li><p>Line 5: We’ve given the class a unique name.</p></li>
+<li><p>Lines 6 to 17: We’ve given the class a useful docstring.</p></li>
+<li><p>Line 22: We’ve set the message name to our unique descriptive string as
+defined in <a class="reference internal" href="#designing-the-payload-message">13.1.3 - Designing the payload message</a>.</p></li>
+<li><p>Line 24: We know we need to send an MQTT message as part of our solution so
+this line has been uncommented to enable the message publishing method.</p></li>
+<li><p>Lines 45 to 49: Here we’re gathering all of the information we need from
+the inbound message.</p></li>
+<li><p>Lines 51 and 52: Here we calculate the sum using the data from our inbound
+message. We then convert this to a string ready for sending it as part of
+the outbound message.</p></li>
+<li><p>Line 54: This is where we publish our outbound message containing our sum.</p></li>
+</ul>
+<p>(The block of comments was no longer required so was deleted.)</p>
+</div>
+<div class="section" id="running-the-new-callback">
+<h4>13.1.6 - Running the new callback<a class="headerlink" href="#running-the-new-callback" title="Permalink to this headline">¶</a></h4>
+<p>Now, if we stop and restart MQTT Remote then the changes will be picked up.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-do-i-stop-mqtt-remote">12.5 - How do I stop MQTT Remote?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-start-mqtt-remote">12.4 - How do I start MQTT Remote?</a></p></li>
+</ul>
+<p>meaning that if we now send the following MQTT message from our home
+automation server MQTT client:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TOPIC: &quot;RC&quot;
+PAYLOAD: &quot;{&quot;command&quot;: &quot;sum_positive_ints&quot;,
+           &quot;attributes&quot;: {&quot;integer_one&quot;: 1,
+                          &quot;integer_two&quot;: 2,
+                          &quot;return_message&quot;: {&quot;topic&quot;: &quot;HA&quot;,
+                                             &quot;qos&quot;: 0,
+                                             &quot;retain&quot;: false}}}
+QOS: 0
+RETAIN: False
+</pre></div>
+</div>
+<p>Then we’ll receive the following payload back from the remote computer:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;3&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-2-adding-an-existing-callback-to-the-app">
+<h3>13.2 - Example 2 - Adding an existing callback to the app<a class="headerlink" href="#example-2-adding-an-existing-callback-to-the-app" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>13.2.1 - Problem<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Let’s say we need to reverse a string. Specifically:</p>
+<ul class="simple">
+<li><p>we have a microcontroller that’s logging key presses from a keyboard</p></li>
+<li><p>the microcontroller is capable of sending and receiving MQTT messages</p></li>
+<li><p>the microcontroller is subscribed to the ‘micro’ MQTT topic</p></li>
+<li><p>we have a PC based server on our network</p></li>
+<li><p>the PC based server is running MQTT Remote</p></li>
+<li><p>MQTT Remote is subscribed to the ‘server’ MQTT topic</p></li>
+<li><p>both computers can communicate with an MQTT broker that’s also on the
+network</p></li>
+<li><p>we want to be able to send a string of key presses from the microcontroller
+via an MQTT message and receive the reverse of that string back as an MQTT
+message.</p></li>
+</ul>
+</div>
+<div class="section" id="solution">
+<h4>13.2.2 - Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h4>
+<p>Luckily for us it seems someone else also wanted to reverse a string and has
+already created a callback that does just that.</p>
+<p>This callback class is called ‘ReverseString’ and can be found in the
+‘reverse_string.py’ file in the ‘example_callbacks’ sub directory under
+&lt;project root&gt; defined in ‘<a class="reference internal" href="#how-do-i-install-it">11.0 - How do I install it?</a>’.</p>
+<p>To add this callback to the app we simply copy the ‘reverse_string.py’ file
+from the ‘example_callbacks’ directory to the ‘local_callbacks’
+directory in our package installation directory.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>See <a class="reference internal" href="#what-are-the-rules-for-local-callbacks">12.7.2 - What are the rules for local callbacks?</a> for how to find
+the location of the ‘local_callbacks’ directory</p></li>
+</ul>
+</div></blockquote>
+<p>We then need to open the ‘reverse_string.py’ file to see if there are any
+import references to any libraries that we don’t have installed. The import
+references for ‘reverse_string.py’ are simply:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mqtt_remote.message</span> <span class="kn">import</span> <span class="n">CommandMessageCallback</span>
+</pre></div>
+</div>
+<p>so there are no references to any external libraries meaning we don’t need
+to install anything.</p>
+<p>And that’s basically it. We can see from the callback docstring that the
+callback requires a message in the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;command&quot;: &quot;reverse_string&quot;,
+&quot;attributes&quot;: {&quot;string_to_reverse&quot;: &lt;str&gt;,
+               &quot;return_message&quot;: {&quot;topic&quot;: &lt;str&gt;,
+                                  &quot;qos&quot;: &lt;int&gt;,
+                                  &quot;retain&quot;: &lt;bool&gt;}}}
+</pre></div>
+</div>
+<p>So lets say someone typed ‘racecar is a palindrome’ on the keyboard. The
+microcontroller would then send the following MQTT message:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TOPIC: &quot;server&quot;
+PAYLOAD:   {&quot;command&quot;: &quot;reverse_string&quot;,
+            &quot;attributes&quot;: {&quot;string_to_reverse&quot;: &quot;racecar is a palindrome&quot;,
+                           &quot;return_message&quot;: {&quot;topic&quot;: &quot;micro&quot;,
+                                              &quot;qos&quot;: 0,
+                                              &quot;retain&quot;: false}}}
+QOS: 0
+RETAIN: False
+</pre></div>
+</div>
+<p>and in response it would receive an MQTT message back with the following
+payload:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;emordnilap a si racecar&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="project-status">
+<h2>14 - Project status<a class="headerlink" href="#project-status" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>It’s early days. If there’s significant interest I’ll try and find some
+time to work on it some more.</p></li>
+<li><p>Feedback, feature requests, pull requests and issue reporting are all
+welcomed.</p></li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h2>15 - To do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Write documentation for plugins.</p>
+<ul>
+<li><p>Plugins are installed as separate apps within the same environment as
+MQTT Remote.</p>
+<ul>
+<li><p>They allow for things like easy dependency management, e.g. when
+the plugin is installed the dependencies for its callbacks can be
+automatically installed at the same time.</p></li>
+<li><p>Once installed, plugins are detected by MQTT Remote and their
+callbacks are automatically loaded when MQTT Remote is started.</p></li>
+</ul>
+</li>
+<li><p>An example plugin is included in the ‘example_plugins’ sub directory under
+&lt;project root&gt; defined in ‘<a class="reference internal" href="#how-do-i-install-it">11.0 - How do I install it?</a>’..</p></li>
+</ul>
+</li>
+<li><p>Write documentation for development.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to MQTT Remote’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, James Gagg.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

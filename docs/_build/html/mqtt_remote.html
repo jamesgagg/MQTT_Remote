@@ -1,0 +1,1747 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>mqtt_remote package &mdash; MQTT Remote  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="API" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MQTT Remote
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme_link.html">README</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mqtt_remote package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.callbacks_local">mqtt_remote.callbacks_local module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.callbacks_plugins">mqtt_remote.callbacks_plugins module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.config">mqtt_remote.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.callback_creation">mqtt_remote.callback_creation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.message">mqtt_remote.message module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.mqtt_client">mqtt_remote.mqtt_client module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote.remote">mqtt_remote.remote module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-mqtt_remote">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MQTT Remote</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">API</a> &raquo;</li>
+        
+      <li>mqtt_remote package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/mqtt_remote.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mqtt-remote-package">
+<h1>mqtt_remote package<a class="headerlink" href="#mqtt-remote-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mqtt_remote.callbacks_local">
+<span id="mqtt-remote-callbacks-local-module"></span><h2>mqtt_remote.callbacks_local module<a class="headerlink" href="#module-mqtt_remote.callbacks_local" title="Permalink to this headline">¶</a></h2>
+<p>Local callback related functionality.</p>
+<p class="rubric">Examples</p>
+<p>To get the local callback modules:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">full_path_of_local_callbacks</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">LOCAL_CALLBACK_DIR_FULL_PATH</span><span class="p">)</span>
+<span class="n">local_callbacks</span> <span class="o">=</span> <span class="n">local_callback_modules</span><span class="p">(</span><span class="n">full_path_of_local_callbacks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To import the local callback modules manually:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">full_path_of_local_callbacks</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">LOCAL_CALLBACK_DIR_FULL_PATH</span><span class="p">)</span>
+<span class="n">local_callbacks</span> <span class="o">=</span> <span class="n">local_callback_modules</span><span class="p">(</span><span class="n">full_path_of_local_callbacks</span><span class="p">)</span>
+<span class="n">import_local_callback_modules</span><span class="p">(</span><span class="n">local_callbacks</span><span class="p">,</span> <span class="n">LOCAL_CALLBACKS_DIR_NAME</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To import the local callback modules automatically:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">auto_import_local_callback_modules</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_local.LOCAL_CALLBACKS_DIR_NAME">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_local.</span></span><span class="sig-name descname"><span class="pre">LOCAL_CALLBACKS_DIR_NAME</span></span><a class="headerlink" href="#mqtt_remote.callbacks_local.LOCAL_CALLBACKS_DIR_NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the directory where the files containing the local
+callbacks are stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_local.LOCAL_CALLBACK_DIR_FULL_PATH">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_local.</span></span><span class="sig-name descname"><span class="pre">LOCAL_CALLBACK_DIR_FULL_PATH</span></span><a class="headerlink" href="#mqtt_remote.callbacks_local.LOCAL_CALLBACK_DIR_FULL_PATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path of the directory where the files containing
+the local callbacks are stored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_local.auto_import_local_callback_modules">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_local.</span></span><span class="sig-name descname"><span class="pre">auto_import_local_callback_modules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_local.auto_import_local_callback_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically imports local callback modules</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_local.import_local_callback_modules">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_local.</span></span><span class="sig-name descname"><span class="pre">import_local_callback_modules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_callbacks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_local.import_local_callback_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports local callback modules</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>local_callbacks</strong> (<em>generator</em><em>[</em><em>pathlib.Path</em><em>]</em>) – The local callback modules.</p></li>
+<li><p><strong>directory</strong> (<em>str</em>) – The name of the directory where the files containing the local
+callbacks are stored.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_local.local_callback_modules">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_local.</span></span><span class="sig-name descname"><span class="pre">local_callback_modules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_callback_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_local.local_callback_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the local callback modules</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>local_callback_path</strong> (<em>pathlib.Path</em>) – The directory where the files containing the local
+callbacks are stored.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The local callback modules.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>generator[pathlib.Path]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote.callbacks_plugins">
+<span id="mqtt-remote-callbacks-plugins-module"></span><h2>mqtt_remote.callbacks_plugins module<a class="headerlink" href="#module-mqtt_remote.callbacks_plugins" title="Permalink to this headline">¶</a></h2>
+<p>Plugin related functionality</p>
+<p class="rubric">Examples</p>
+<p>To return all top level modules in the current namespace:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_top_level_module_names</span> <span class="o">=</span> <span class="n">names_of_all_top_level_modules</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To return the names of all modules that have the plugin prefix:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_top_level_module_names</span> <span class="o">=</span> <span class="n">names_of_all_top_level_modules</span><span class="p">()</span>
+<span class="n">plugins</span> <span class="o">=</span> <span class="n">top_level_module_plugins</span><span class="p">(</span><span class="n">all_top_level_module_names</span><span class="p">,</span> <span class="n">PLUGIN_PACKAGE_PREFIX</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To get a list of plugin module names in the format required for importlib.import_module()</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_top_level_module_names</span> <span class="o">=</span> <span class="n">names_of_all_top_level_modules</span><span class="p">()</span>
+<span class="n">plugins</span> <span class="o">=</span> <span class="n">top_level_module_plugins</span><span class="p">(</span><span class="n">all_top_level_module_names</span><span class="p">,</span> <span class="n">PLUGIN_PACKAGE_PREFIX</span><span class="p">)</span>
+<span class="n">formatted_plugin_names</span> <span class="o">=</span> <span class="n">format_plugin_names_for_import</span><span class="p">(</span><span class="n">plugins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To manually import the plugin modules:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_top_level_module_names</span> <span class="o">=</span> <span class="n">names_of_all_top_level_modules</span><span class="p">()</span>
+<span class="n">plugins</span> <span class="o">=</span> <span class="n">top_level_module_plugins</span><span class="p">(</span><span class="n">all_top_level_module_names</span><span class="p">,</span> <span class="n">PLUGIN_PACKAGE_PREFIX</span><span class="p">)</span>
+<span class="n">formatted_plugin_names</span> <span class="o">=</span> <span class="n">format_plugin_names_for_import</span><span class="p">(</span><span class="n">plugins</span><span class="p">)</span>
+<span class="n">import_plugin_modules</span><span class="p">(</span><span class="n">formatted_plugin_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To automatically import the plugin modules:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">auto_import_plugins</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_plugins.PLUGIN_PACKAGE_PREFIX">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_plugins.</span></span><span class="sig-name descname"><span class="pre">PLUGIN_PACKAGE_PREFIX</span></span><a class="headerlink" href="#mqtt_remote.callbacks_plugins.PLUGIN_PACKAGE_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd><p>The prefix that denotes that a package is an MQTT remote plugin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_plugins.auto_import_plugins">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_plugins.</span></span><span class="sig-name descname"><span class="pre">auto_import_plugins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_plugins.auto_import_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically imports plugin modules</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_plugins.format_plugin_names_for_import">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_plugins.</span></span><span class="sig-name descname"><span class="pre">format_plugin_names_for_import</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plugin_module_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_plugins.format_plugin_names_for_import" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats plugin module names in the format required for importlib.import_module()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>plugin_module_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Top level modules with a plugin prefix</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Plugins in the correct format for importing with importlib.import_module()</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_plugins.import_plugin_modules">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_plugins.</span></span><span class="sig-name descname"><span class="pre">import_plugin_modules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_plugin_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_plugins.import_plugin_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports plugin modules</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>full_plugin_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – Correctly formatted top level modules with a plugin prefix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_plugins.names_of_all_top_level_modules">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_plugins.</span></span><span class="sig-name descname"><span class="pre">names_of_all_top_level_modules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_plugins.names_of_all_top_level_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all top level modules in the current namespace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>All top level modules in the current namespace</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callbacks_plugins.top_level_module_plugins">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callbacks_plugins.</span></span><span class="sig-name descname"><span class="pre">top_level_module_plugins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_top_level_module_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin_prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callbacks_plugins.top_level_module_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the names of all top level modules matching with a plugin prefix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>all_top_level_module_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A list of all top level module names.</p></li>
+<li><p><strong>plugin_prefix</strong> (<em>str</em>) – module plugin prefix</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of all top level modules matching with a plugin prefix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote.config">
+<span id="mqtt-remote-config-module"></span><h2>mqtt_remote.config module<a class="headerlink" href="#module-mqtt_remote.config" title="Permalink to this headline">¶</a></h2>
+<p>Configuration related functionality</p>
+<p class="rubric">Example</p>
+<p>To load a YAML file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file_contents</span> <span class="o">=</span> <span class="n">load_yaml</span><span class="p">(</span><span class="n">yaml_file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To obtain a completed configuration from the configuration file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">initial_config</span> <span class="o">=</span> <span class="n">load_yaml</span><span class="p">(</span><span class="n">YAML_CONFIG_FILE</span><span class="p">)</span>
+<span class="n">config_completer</span> <span class="o">=</span> <span class="n">ConfigCompleter</span><span class="p">(</span><span class="n">initial_config</span><span class="p">)</span>
+<span class="n">completed_config</span> <span class="o">=</span> <span class="n">config_completer</span><span class="o">.</span><span class="n">complete</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To obtain a completed configuration from a raw configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raw_config</span> <span class="o">=</span> <span class="n">load_yaml</span><span class="p">(</span><span class="n">YAML_CONFIG_FILE</span><span class="p">)</span>
+<span class="n">completed_config</span> <span class="o">=</span> <span class="n">completed_config_from_raw_config</span><span class="p">(</span><span class="n">raw_config</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To obtain a completed configuration from the configuration file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">completed_config</span> <span class="o">=</span> <span class="n">completed_config_from_file</span><span class="p">(</span><span class="n">YAML_CONFIG_FILE</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.YAML_CONFIG_FILE">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">YAML_CONFIG_FILE</span></span><a class="headerlink" href="#mqtt_remote.config.YAML_CONFIG_FILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path of the mqtt_remote .yaml configuration file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.LOGGING_LEVELS">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">LOGGING_LEVELS</span></span><a class="headerlink" href="#mqtt_remote.config.LOGGING_LEVELS" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each ‘Key: Value’ pair in the dict:
+Key (str): string representation of a logging level,
+Value (logging attribute): the python logging attribute associated with the key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.MQTT_PROTOCOLS">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">MQTT_PROTOCOLS</span></span><a class="headerlink" href="#mqtt_remote.config.MQTT_PROTOCOLS" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each ‘Key: Value’ pair in the dict:
+Key (str): string representation of an mqtt protocol,
+Value (mqtt attribute): mqtt attribute associated with the key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">ConfigCompleter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_protocols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Allows a raw MQTT Remote configuration to be converted into a completed configuration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter.raw_cfg">
+<span class="sig-name descname"><span class="pre">raw_cfg</span></span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter.raw_cfg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raw MQTT Remote configuration, e.g. the dict imported from the
+configuration .yaml file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter.logging_levels">
+<span class="sig-name descname"><span class="pre">logging_levels</span></span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter.logging_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each ‘Key: Value’ pair in the dict:
+Key (str): string representation of a logging level,
+Value (logging attribute): the python logging attribute associated with the key.
+Defaults to ‘LOGGING_LEVELS’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter.mqtt_protocols">
+<span class="sig-name descname"><span class="pre">mqtt_protocols</span></span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter.mqtt_protocols" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each ‘Key: Value’ pair in the dict:
+Key (str): string representation of an mqtt protocol,
+Value (mqtt attribute): mqtt protocol attribute associated with the key.
+Defaults to MQTT_PROTOCOLS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter.completed_cfg">
+<span class="sig-name descname"><span class="pre">completed_cfg</span></span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter.completed_cfg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Completed MQTT Remote configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_protocols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raw_config</strong> (<em>dict</em>) – Raw MQTT Remote configuration, e.g. the dict imported from the
+configuration .yaml file.</p></li>
+<li><p><strong>logging_levels</strong> (<em>dict</em><em>, </em><em>optional</em>) – For each ‘Key: Value’ pair in the dict:
+Key (str): string representation of a logging level,
+Value (logging attribute): the python logging attribute associated with the key.
+Defaults to None.</p></li>
+<li><p><strong>mqtt_protocols</strong> (<em>dict</em><em>, </em><em>optional</em>) – For each ‘Key: Value’ pair in the dict:
+Key (str): string representation of an mqtt protocol,
+Value (mqtt attribute): mqtt attribute associated with the key.
+Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.config.ConfigCompleter.complete">
+<span class="sig-name descname"><span class="pre">complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.config.ConfigCompleter.complete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a completed configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Completed configuration</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.config.completed_config_from_file">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">completed_config_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.config.completed_config_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a completed config from a config file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>config_file</strong> (<em>str</em>) – YAML config file path.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A completed MQTT Remote configuration</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.config.completed_config_from_raw_config">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">completed_config_from_raw_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.config.completed_config_from_raw_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a completed config from a raw config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw_config</strong> (<em>dict</em>) – Raw MQTT Remote configuration, e.g. the dict imported from the
+configuration .yaml file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A completed MQTT Remote configuration</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.config.load_yaml">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.config.</span></span><span class="sig-name descname"><span class="pre">load_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">yaml_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.config.load_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a specified yaml file and returns the contents as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>yaml_file</strong> (<em>str</em>) – YAML file path.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The structured YAML from ‘yaml_file’.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote.callback_creation">
+<span id="mqtt-remote-callback-creation-module"></span><h2>mqtt_remote.callback_creation module<a class="headerlink" href="#module-mqtt_remote.callback_creation" title="Permalink to this headline">¶</a></h2>
+<p>Functionality related to creating callbacks</p>
+<p class="rubric">Example</p>
+<p>To import a file as a string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;C:\mydir</span><span class="se">\f</span><span class="s1">ile.txt&#39;</span>
+<span class="n">file_as_string</span> <span class="o">=</span> <span class="n">import_file_as_string</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To copy a string to the clipboard:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string_to_copy</span> <span class="o">=</span> <span class="s1">&#39;Spam&#39;</span>
+<span class="n">copy_string_to_clipboard</span><span class="p">(</span><span class="n">string_to_copy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To copy a callback template to the clipboard:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">copy_template_to_clipboard</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To create a file containing a callback:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">create_callback_file</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.callback_creation.TEMPLATE_FILE">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callback_creation.</span></span><span class="sig-name descname"><span class="pre">TEMPLATE_FILE</span></span><a class="headerlink" href="#mqtt_remote.callback_creation.TEMPLATE_FILE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path of the callback template file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callback_creation.copy_string_to_clipboard">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callback_creation.</span></span><span class="sig-name descname"><span class="pre">copy_string_to_clipboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string_to_copy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callback_creation.copy_string_to_clipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the supplied string to the OS clipboard</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>string_to_copy</strong> (<em>str</em>) – The string to copy to the OS clipboard</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callback_creation.copy_template_to_clipboard">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callback_creation.</span></span><span class="sig-name descname"><span class="pre">copy_template_to_clipboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">import_file_as_string_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string_to_clipboard_function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callback_creation.copy_template_to_clipboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the callback template to the OS clipboard</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The path of the file to import. Defaults to None.</p></li>
+<li><p><strong>import_file_as_string_function</strong> (<em>Callable</em><em>, </em><em>optional</em>) – The function that imports a file as a
+string. Defaults to None.</p></li>
+<li><p><strong>string_to_clipboard_function</strong> (<em>Callable</em><em>, </em><em>optional</em>) – The function that copies a string to the
+OS clipboard. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callback_creation.create_callback_file">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callback_creation.</span></span><span class="sig-name descname"><span class="pre">create_callback_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callback_creation.create_callback_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a file containing a callback template</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The path and filename to save the callback file to.
+Defaults to None.</p></li>
+<li><p><strong>callback</strong> (<em>str</em><em>, </em><em>optional</em>) – The callback to save as the contents of the callback file.
+Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.callback_creation.import_file_as_string">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.callback_creation.</span></span><span class="sig-name descname"><span class="pre">import_file_as_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.callback_creation.import_file_as_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contents of a file as a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – The path of the file to import</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The contents of the file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote.message">
+<span id="mqtt-remote-message-module"></span><h2>mqtt_remote.message module<a class="headerlink" href="#module-mqtt_remote.message" title="Permalink to this headline">¶</a></h2>
+<p>Message related functionality</p>
+<p class="rubric">Examples</p>
+<p>To create a command message:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">topic</span> <span class="o">=</span> <span class="s1">&#39;a_topic&#39;</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;command&quot;</span><span class="p">:</span> <span class="s2">&quot;print_something&quot;</span><span class="p">,</span> <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;thing_to_print&quot;</span><span class="p">:</span> <span class="s2">&quot;Spam&quot;</span><span class="p">}}</span>
+<span class="n">qos</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">retain</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">command_message</span> <span class="o">=</span> <span class="n">CommandMessage</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">qos</span><span class="p">,</span> <span class="n">retain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To create a Paho to command message convertor:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message_convertor</span> <span class="o">=</span> <span class="n">PahoToCommandMessageConvertor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To create a converted message forwarder:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message_forwarder</span> <span class="o">=</span> <span class="n">ConvertedCommandMessageForwarder</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To create a callback caller:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callback_caller</span> <span class="o">=</span> <span class="n">CommandMessageCallbackCaller</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To setup the message forwarder:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message_convertor</span> <span class="o">=</span> <span class="n">PahoToCommandMessageConvertor</span><span class="p">()</span>
+<span class="n">message_forwarder</span> <span class="o">=</span> <span class="n">ConvertedCommandMessageForwarder</span><span class="p">()</span>
+<span class="n">callback_caller</span> <span class="o">=</span> <span class="n">CommandMessageCallbackCaller</span><span class="p">()</span>
+
+<span class="n">message_forwarder</span><span class="o">.</span><span class="n">message_convertor</span> <span class="o">=</span> <span class="n">message_convertor</span>
+<span class="n">message_forwarder</span><span class="o">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">callback_caller</span><span class="o">.</span><span class="n">callback_caller</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To setup the callback_caller:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callback_caller</span><span class="o">.</span><span class="n">mqtt_publish</span> <span class="o">=</span> <span class="n">publish_function</span>
+<span class="n">callback_caller</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">completed_config</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To automatically register CommandMessageCallback callbacks with the callback caller:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callback_caller</span><span class="o">.</span><span class="n">auto_add_command_message_callbacks</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To check if a payload message is valid:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_valid</span> <span class="o">=</span> <span class="n">valid_payload_value</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">required_value_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To log that a command message was of the wrong form:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">log_wrong_command_message_form</span><span class="p">(</span><span class="n">callback_name</span><span class="p">,</span> <span class="n">required_message_form</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">CommandMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Standardised MQTT message format</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessage.topic">
+<span class="sig-name descname"><span class="pre">topic</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessage.topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>MQTT message topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessage.qos">
+<span class="sig-name descname"><span class="pre">qos</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessage.qos" title="Permalink to this definition">¶</a></dt>
+<dd><p>MQTT message Quality Of Service</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessage.retain">
+<span class="sig-name descname"><span class="pre">retain</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessage.retain" title="Permalink to this definition">¶</a></dt>
+<dd><p>MQTT message retain flag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessage.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessage.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<em>str</em>) – MQTT message topic</p></li>
+<li><p><strong>payload</strong> (<em>dict</em>) – MQTT message payload. Must be in the following format:
+{“command”: “&lt;command_name&gt;”, “attributes”: {&lt;attributes in key: value pairs&gt;}}</p></li>
+<li><p><strong>qos</strong> (<em>int</em>) – MQTT message Quality Of Service</p></li>
+<li><p><strong>retain</strong> (<em>bool</em>) – MQTT message retain flag</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessage.payload">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">payload</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessage.payload" title="Permalink to this definition">¶</a></dt>
+<dd><p>MQTT message payload.</p>
+<p>Setter:</p>
+<blockquote>
+<div><p>Raises:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">TypeError</dt>
+<dd class="field-odd"><p>if ‘payload’ is not a dictionary</p>
+</dd>
+<dt class="field-even">ValueError</dt>
+<dd class="field-even"><p>if the ‘command’ and/or ‘attributes’ keys are not found in the
+dictionary</p>
+</dd>
+<dt class="field-odd">TypeError</dt>
+<dd class="field-odd"><p>if the value for the ‘command’ key in ‘payload’ is not a string</p>
+</dd>
+<dt class="field-even">TypeError</dt>
+<dd class="field-even"><p>if the value for the ‘attributes’ key in ‘payload’ is not a dict</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallback">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">CommandMessageCallback</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract base class for command message callback objects</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallback.__init__">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallback.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method Constructor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallback.execute">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inbound_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallback.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method for the callback</p>
+<p>Callbacks added by ‘CommandMessageCallbackCaller.auto_add_command_message_callbacks()’ will
+call this method of the callback object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallback.message_name">
+<em class="property"><span class="pre">abstract</span> <span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">message_name</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallback.message_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method for a ‘message_name’ property getter</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">CommandMessageCallbackCaller</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Associates callbacks with CommandMessages and calls a callback if a matching CommandMessage
+is received</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller.add_callback">
+<span class="sig-name descname"><span class="pre">add_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller.add_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a ‘command_name’: ‘callback’ key:value pair to the registered callbacks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command_name</strong> (<em>str</em>) – Name of the command. This must match exactly with a
+‘CommandMessage.payload[‘command’]’ to result in the ‘callback’ associated with
+this argument being called.</p></li>
+<li><p><strong>callback</strong> (<em>function</em><em>, </em><em>class</em>) – a callable object (e.g. function, method or class)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>All of the currently registered callbacks</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller.auto_add_command_message_callbacks">
+<span class="sig-name descname"><span class="pre">auto_add_command_message_callbacks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller.auto_add_command_message_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically adds callbacks that inherit from CommandMessageCallback to the registered
+callbacks</p>
+<p>The callback classes that inherit from CommandMessageCallback must be present in the
+namespace in order for them to be automatically found, instantiated and added</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller.callback_caller">
+<span class="sig-name descname"><span class="pre">callback_caller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller.callback_caller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls a registered callback if ‘CommandMessage.payload[‘command’]’ matches with a
+key in the registered callbacks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_message</strong> (<a class="reference internal" href="#mqtt_remote.message.CommandMessage" title="mqtt_remote.message.CommandMessage"><em>CommandMessage</em></a>) – CommandMessage</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller.get_callbacks">
+<span class="sig-name descname"><span class="pre">get_callbacks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller.get_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary containing all of the registered callbacks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>All of the currently registered callbacks</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageCallbackCaller.remove_callback">
+<span class="sig-name descname"><span class="pre">remove_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageCallbackCaller.remove_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a callback key:value pair from the registered callbacks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>str</em>) – Key corresponding to the callback to be removed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>All of the currently registered callbacks</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageConvertor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">CommandMessageConvertor</span></span><a class="headerlink" href="#mqtt_remote.message.CommandMessageConvertor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract base class for convertors that convert messages to the CommandMessage format</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageConvertor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageConvertor.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.CommandMessageConvertor.convert">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.CommandMessageConvertor.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method for converting a message into a CommandMessage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>Any</em>) – message to be converted</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.message.ConvertedCommandMessageForwarder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">ConvertedCommandMessageForwarder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_convertor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.ConvertedCommandMessageForwarder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides functionality to call a callback with a CommandMessage converted from a raw message</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.ConvertedCommandMessageForwarder.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_convertor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.ConvertedCommandMessageForwarder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message_convertor</strong> (<a class="reference internal" href="#mqtt_remote.message.CommandMessageConvertor" title="mqtt_remote.message.CommandMessageConvertor"><em>CommandMessageConvertor</em></a><em>, </em><em>optional</em>) – A message convertor.</p></li>
+<li><p><strong>callback</strong> (<em>function</em><em>, </em><em>class</em>) – a callable object (e.g. function, method or class).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.ConvertedCommandMessageForwarder.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command_message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.ConvertedCommandMessageForwarder.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls ‘self.callback’ with a ‘CommandMessage’ converted from ‘raw_message’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw_message</strong> (<em>Any</em>) – The raw message from an MQTT client. Must be compatible with
+the specific convertor referenced by ‘self.message_convertor’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.message.PahoToCommandMessageConvertor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">PahoToCommandMessageConvertor</span></span><a class="headerlink" href="#mqtt_remote.message.PahoToCommandMessageConvertor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mqtt_remote.message.CommandMessageConvertor" title="mqtt_remote.message.CommandMessageConvertor"><code class="xref py py-class docutils literal notranslate"><span class="pre">mqtt_remote.message.CommandMessageConvertor</span></code></a></p>
+<p>Provides the functionality to convert a Paho message to a CommandMessage</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.message.PahoToCommandMessageConvertor.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.PahoToCommandMessageConvertor.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a paho message into a CommandMessage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>paho.mqtt.client.MQTTMessage</em>) – Paho message</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A CommandMessage object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mqtt_remote.message.CommandMessage" title="mqtt_remote.message.CommandMessage">CommandMessage</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.message.log_wrong_command_message_form">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">log_wrong_command_message_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_message_form</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.log_wrong_command_message_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Issues a logger message reporting that a CommandMessage payload is not of the form
+required by a callback</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback_name</strong> (<em>str</em>) – Name of callback</p></li>
+<li><p><strong>required_message_form</strong> (<em>str</em>) – Required message form</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.message.valid_payload_value">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.message.</span></span><span class="sig-name descname"><span class="pre">valid_payload_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_value_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.message.valid_payload_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a value for a particular payload key within a command message is valid</p>
+<dl class="field-list">
+<dt class="field-odd">Checks two things</dt>
+<dd class="field-odd"><p>1.) whether the key is present</p>
+<p>2.) whether the value associated with the key is of the expected type</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>message</strong> (<a class="reference internal" href="#mqtt_remote.message.CommandMessage" title="mqtt_remote.message.CommandMessage"><em>CommandMessage</em></a>) – CommandMessage to check</p></li>
+<li><p><strong>keys</strong> (<em>list</em>) – A list of keys ordered from root to leaf where the leaf is the key, value
+pair to check e.g. ‘keys’ for message.payload[‘attributes’][‘lounge’][‘temperature’]
+would be: [‘attributes’, ‘lounge’, ‘temperature’]</p></li>
+<li><p><strong>required_value_type</strong> (<em>type</em>) – The expected type of the value corresponding to the key being
+checked</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True: if the ‘key: value’ pair is valid,
+False: if the ‘key: value’ pair is invalid</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote.mqtt_client">
+<span id="mqtt-remote-mqtt-client-module"></span><h2>mqtt_remote.mqtt_client module<a class="headerlink" href="#module-mqtt_remote.mqtt_client" title="Permalink to this headline">¶</a></h2>
+<p>MQTT Client</p>
+<p class="rubric">Examples</p>
+<p>To create a CallbackSet:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callback_set</span> <span class="o">=</span> <span class="n">CallbackSet</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To add a callback to a CallbackSet:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">example_cb</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">callback_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">example_cb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To remove a callback from a CallbackSet:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callback_set</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">example_cb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To create an MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span> <span class="o">=</span> <span class="n">mqtt_client</span><span class="o">.</span><span class="n">MQTTClient</span><span class="p">(</span><span class="s1">&#39;user_name&#39;</span><span class="p">,</span>
+                                              <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+                                              <span class="s1">&#39;192.168.1.123&#39;</span><span class="p">,</span>
+                                              <span class="mi">1883</span><span class="p">,</span>
+                                              <span class="mi">60</span><span class="p">,</span>
+                                              <span class="p">[(</span><span class="s2">&quot;MyPC&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
+                                              <span class="s2">&quot;MyPC&quot;</span><span class="p">,</span>
+                                              <span class="kc">True</span><span class="p">,</span>
+                                              <span class="s2">&quot;3.1.1&quot;</span><span class="p">:</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">MQTTv311</span><span class="p">,</span>
+                                              <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+                                              <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To initialise an MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span><span class="o">.</span><span class="n">initialise</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To start an MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;blocking&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To stop an MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To use the MQTT client to publish an MQTT message:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="s2">&quot;my topic&quot;</span><span class="p">,</span> <span class="s2">&quot;hello world&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.CallbackSet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.mqtt_client.</span></span><span class="sig-name descname"><span class="pre">CallbackSet</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.CallbackSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data structure to hold callbacks</p>
+<p>Extends the required methods of a set by adding additional logging and error checking
+capabilities</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.CallbackSet.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.CallbackSet.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a callback</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>function</em><em>, </em><em>class</em>) – a callable object (e.g. function, method or class)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>callbacks</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.CallbackSet.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.CallbackSet.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a callback</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>function</em><em>, </em><em>class</em>) – a callable object (e.g. function, method or class)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>callbacks</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>set</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mqtt_remote.mqtt_client.</span></span><span class="sig-name descname"><span class="pre">MQTTClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">broker_user_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_keepalive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subscription_topics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_clean_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_transport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>MQTT client</p>
+<p>Extends the paho client with additional logging, error handling and convenience feature</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.broker_user_name">
+<span class="sig-name descname"><span class="pre">broker_user_name</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.broker_user_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user name required to access the MQTT broker</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.broker_password">
+<span class="sig-name descname"><span class="pre">broker_password</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.broker_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>The password required to access the MQTT broker</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.broker_ip">
+<span class="sig-name descname"><span class="pre">broker_ip</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.broker_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>The IP address of the MQTT broker</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.broker_port">
+<span class="sig-name descname"><span class="pre">broker_port</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.broker_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>The port for the MQTT broker</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.broker_keepalive">
+<span class="sig-name descname"><span class="pre">broker_keepalive</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.broker_keepalive" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum time, in seconds, that the client will remain
+quiet without sending an MQTT packet to the broker to confirm it is still connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.subscription_topics">
+<span class="sig-name descname"><span class="pre">subscription_topics</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.subscription_topics" title="Permalink to this definition">¶</a></dt>
+<dd><p>[(&lt;topic&gt;, &lt;qos&gt;), (…)]:
+topic: the MQTT topic to subscribe to,
+qos: the desired Quality Of Service for topic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[Tuple]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.mqtt_client_id">
+<span class="sig-name descname"><span class="pre">mqtt_client_id</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.mqtt_client_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>An identifier for the MQTT client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.mqtt_clean_session">
+<span class="sig-name descname"><span class="pre">mqtt_clean_session</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.mqtt_clean_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>True: the broker will remove all information about this client when it disconnects.
+False: the client will be a durable client (subscription information and queued
+messages will be retained when the client disconnects).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.mqtt_protocol">
+<span class="sig-name descname"><span class="pre">mqtt_protocol</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.mqtt_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>the version of the MQTT protocol to use for this client (as
+allowed by paho.mqtt.client)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.mqtt_transport">
+<span class="sig-name descname"><span class="pre">mqtt_transport</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.mqtt_transport" title="Permalink to this definition">¶</a></dt>
+<dd><p>MQTT network transport:
+“websockets” to send MQTT over WebSockets.
+“tcp” to use raw TCP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.log_client">
+<span class="sig-name descname"><span class="pre">log_client</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.log_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>True: allow the log messages from the underlying paho client to
+pass through and be logged by this client, False: do not allow the log messages
+from the underlying paho client to pass through and be logged by this client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.on_message_callbacks">
+<span class="sig-name descname"><span class="pre">on_message_callbacks</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.on_message_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>The callbacks to be called when an MQTT message
+is received</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mqtt_remote.mqtt_client.CallbackSet" title="mqtt_remote.mqtt_client.CallbackSet">CallbackSet</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.initialised">
+<span class="sig-name descname"><span class="pre">initialised</span></span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.initialised" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the client has been initialised, i.e. whether
+self.initialise has been run</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">broker_user_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broker_keepalive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subscription_topics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_clean_session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mqtt_transport</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>broker_user_name</strong> (<em>str</em>) – The user name required to access the MQTT broker</p></li>
+<li><p><strong>broker_password</strong> (<em>str</em>) – The password required to access the MQTT broker</p></li>
+<li><p><strong>broker_ip</strong> (<em>str</em>) – The IP address of the MQTT broker</p></li>
+<li><p><strong>broker_port</strong> (<em>int</em>) – The port for the MQTT broker</p></li>
+<li><p><strong>broker_keepalive</strong> (<em>int</em>) – The maximum time, in seconds, that the client will remain
+quiet without sending an MQTT packet to the broker to confirm it is still connected</p></li>
+<li><p><strong>subscription_topics</strong> (<em>list</em><em>[</em><em>Tuple</em><em>]</em>) – [(&lt;topic&gt;, &lt;qos&gt;), (…)]:
+topic: the MQTT topic to subscribe to,
+qos: the desired Quality Of Service for topic</p></li>
+<li><p><strong>mqtt_client_id</strong> (<em>str</em>) – An identifier for the MQTT client</p></li>
+<li><p><strong>mqtt_clean_session</strong> (<em>bool</em>) – True: the broker will remove all information about this client when it disconnects.
+False: the client will be a durable client (subscription information and queued
+messages will be retained when the client disconnects).</p></li>
+<li><p><strong>mqtt_protocol</strong> (<em>str</em>) – the version of the MQTT protocol to use for this client (as
+allowed by paho.mqtt.client)</p></li>
+<li><p><strong>mqtt_transport</strong> (<em>str</em>) – MQTT network transport:
+“websockets” to send MQTT over WebSockets.
+“tcp” to use raw TCP.</p></li>
+<li><p><strong>log_client</strong> (<em>bool</em>) – True: allow the log messages from the underlying paho client to
+pass through and be logged by this client, False: do not allow the log messages
+from the underlying paho client to pass through and be logged by this client</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.initialise">
+<span class="sig-name descname"><span class="pre">initialise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.initialise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the underlying MQTT client ready to start</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.publish">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Requests that the client sends an MQTT message to the broker for publishing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<em>str</em>) – The topic of the MQTT message to publish</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – The MQTT payload to publish</p></li>
+<li><p><strong>qos</strong> (<em>int</em>) – The required Quality Of Service for the MQTT message</p></li>
+<li><p><strong>retain</strong> (<em>bool</em>) – True: the message will be set as the “last known good” / retained
+message for the topic. False: the message will not be set as the
+“last known good” / retained message for the topic.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – if the client has not been initialised prior to using this method</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loop_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>loop_type</strong> (<em>str</em>) – determines in which mode the client is run:
+‘blocking’ or
+‘non_blocking’</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>RuntimeError</strong> – if the client has not been initialised prior to using this method</p></li>
+<li><p><strong>ValueError</strong> – if an unacceptable loop_type is provided</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt_remote.mqtt_client.MQTTClient.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.mqtt_client.MQTTClient.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the client</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote.remote">
+<span id="mqtt-remote-remote-module"></span><h2>mqtt_remote.remote module<a class="headerlink" href="#module-mqtt_remote.remote" title="Permalink to this headline">¶</a></h2>
+<p>Application entry point</p>
+<p class="rubric">Examples</p>
+<p>To get the installation path of the app:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">installed_path</span> <span class="o">=</span> <span class="n">installation_path</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To configure logging:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configure_logging</span><span class="p">(</span><span class="n">completed_config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To load all local callbacks and plugin callbacks:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">load_all_callbacks</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To setup the callback caller:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">callback_caller</span> <span class="o">=</span> <span class="n">setup_callback_caller</span><span class="p">(</span><span class="n">callback_caller</span><span class="p">,</span>
+                                        <span class="n">publish_function</span><span class="p">,</span>
+                                        <span class="n">completed_config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To setup the message forwarder:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message_forwarder</span> <span class="o">=</span> <span class="n">setup_message_forwarder</span><span class="p">(</span><span class="n">message_forwarder</span><span class="p">,</span>
+                                            <span class="n">callback_caller</span><span class="p">,</span>
+                                            <span class="n">message_convertor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To create an unconfigured MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span> <span class="o">=</span> <span class="n">create_mqtt_software_client</span><span class="p">(</span><span class="n">completed_config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To setup the MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span> <span class="o">=</span> <span class="n">setup_mqtt_software_client</span><span class="p">(</span><span class="n">mqtt_software_client</span><span class="p">,</span>
+                                                  <span class="n">completed_config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To create a configured MQTT client:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mqtt_software_client</span> <span class="o">=</span> <span class="n">create_configured_mqtt_software_client</span><span class="p">(</span><span class="n">completed_config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To stop the MQTT client in a controlled manner:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">controlled_shutdown</span><span class="p">(</span><span class="n">mqtt_software_client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To start the application manually:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">start</span><span class="p">(</span><span class="n">mqtt_software_client</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To start the application automatically:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">auto_start</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mqtt_remote.remote.MQTT_CLIENT_LOOP_TYPE">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">MQTT_CLIENT_LOOP_TYPE</span></span><a class="headerlink" href="#mqtt_remote.remote.MQTT_CLIENT_LOOP_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The desired mode for running the MQTT client, i.e. ‘blocking’
+or ‘non_blocking’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.auto_start">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">auto_start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.auto_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically starts the app</p>
+<p>This is the entry point for the app</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.configure_logging">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">configure_logging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">completed_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.configure_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configures logging for the app</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>completed_config</strong> (<em>dict</em>) – A dictionary containing a completed MQTT Remote</p></li>
+<li><p><strong>configuration</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.controlled_shutdown">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">controlled_shutdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqtt_software_client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.controlled_shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempts to shutdown the app in a controlled way</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Client</strong> (<em>MQTT</em>) – The running MQTT software client</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.create_configured_mqtt_software_client">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">create_configured_mqtt_software_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">completed_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.create_configured_mqtt_software_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a configured MQTT software client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>completed_config</strong> (<em>dict</em>) – A dictionary containing a completed MQTT Remote configuration</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A configured MQTT software client</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>MQTT Client (<a class="reference internal" href="#mqtt_remote.mqtt_client.MQTTClient" title="mqtt_remote.mqtt_client.MQTTClient">mqtt_client.MQTTClient</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.create_mqtt_software_client">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">create_mqtt_software_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">completed_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.create_mqtt_software_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an MQTT software client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>completed_config</strong> (<em>dict</em>) – A dictionary containing a completed MQTT Remote configuration</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MQTT software client</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>MQTT Client (<a class="reference internal" href="#mqtt_remote.mqtt_client.MQTTClient" title="mqtt_remote.mqtt_client.MQTTClient">mqtt_client.MQTTClient</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.installation_path">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">installation_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.installation_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path where MQTT Remote was installed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The path where MQTT Remote was installed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.load_all_callbacks">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">load_all_callbacks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.load_all_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads all available local and plugin based callbacks</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.setup_callback_caller">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">setup_callback_caller</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback_caller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publish_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">completed_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.setup_callback_caller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up the callback caller</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback_caller</strong> (<a class="reference internal" href="#mqtt_remote.message.CommandMessageCallbackCaller" title="mqtt_remote.message.CommandMessageCallbackCaller"><em>CommandMessageCallbackCaller</em></a>) – Callback caller to set up</p></li>
+<li><p><strong>publish_function</strong> (<em>Callable</em>) – A callable object to publish MQTT messages</p></li>
+<li><p><strong>completed_config</strong> (<em>dict</em>) – Completed MQTT Remote configuration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Set up callback caller</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mqtt_remote.message.CommandMessageCallbackCaller" title="mqtt_remote.message.CommandMessageCallbackCaller">CommandMessageCallbackCaller</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.setup_message_forwarder">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">setup_message_forwarder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message_forwarder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_caller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_convertor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.setup_message_forwarder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up the message forwarder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>message_forwarder</strong> (<a class="reference internal" href="#mqtt_remote.message.ConvertedCommandMessageForwarder" title="mqtt_remote.message.ConvertedCommandMessageForwarder"><em>ConvertedCommandMessageForwarder</em></a>) – Message forwarder to set up</p></li>
+<li><p><strong>callback_caller</strong> (<a class="reference internal" href="#mqtt_remote.message.CommandMessageCallbackCaller" title="mqtt_remote.message.CommandMessageCallbackCaller"><em>CommandMessageCallbackCaller</em></a>) – Callback caller</p></li>
+<li><p><strong>message_convertor</strong> (<a class="reference internal" href="#mqtt_remote.message.CommandMessageConvertor" title="mqtt_remote.message.CommandMessageConvertor"><em>CommandMessageConvertor</em></a>) – Message convertor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Set up message forwarder</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#mqtt_remote.message.ConvertedCommandMessageForwarder" title="mqtt_remote.message.ConvertedCommandMessageForwarder">ConvertedCommandMessageForwarder</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.setup_mqtt_software_client">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">setup_mqtt_software_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqtt_software_client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">completed_config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.setup_mqtt_software_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up the MQTT software client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mqtt_software_client</strong> (<a class="reference internal" href="#mqtt_remote.mqtt_client.MQTTClient" title="mqtt_remote.mqtt_client.MQTTClient"><em>mqtt_client.MQTTClient</em></a>) – The MQTT software client to set up</p></li>
+<li><p><strong>completed_config</strong> (<em>dict</em>) – A dictionary containing a completed MQTT Remote configuration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The MQTT software client</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>MQTT Client (<a class="reference internal" href="#mqtt_remote.mqtt_client.MQTTClient" title="mqtt_remote.mqtt_client.MQTTClient">mqtt_client.MQTTClient</a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mqtt_remote.remote.start">
+<span class="sig-prename descclassname"><span class="pre">mqtt_remote.remote.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mqtt_software_client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt_remote.remote.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the app</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>Client</strong> (<em>MQTT</em>) – A configured MQTT software client</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-mqtt_remote">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mqtt_remote" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, James Gagg.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
